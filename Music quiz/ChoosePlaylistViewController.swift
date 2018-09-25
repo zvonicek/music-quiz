@@ -21,6 +21,9 @@ class ChoosePlaylistViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        navigationController?.navigationBar.barStyle = .black
+
         startAnimating()
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             SpotifyAPI.sharedInstance.getPlaylists(playlistIds: self.playlistIds) { playlists in
