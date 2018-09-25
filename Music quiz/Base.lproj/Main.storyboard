@@ -270,6 +270,10 @@ Try to guess the right artist.</string>
                                     <constraint firstAttribute="width" secondItem="unc-34-kLU" secondAttribute="height" multiplier="1:1" id="R43-GT-QGS"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3VU-zP-FT6">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                                <color key="backgroundColor" red="0.047058823529411764" green="0.047058823529411764" blue="0.047058823529411764" alpha="0.77514982876712335" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zcB-Ep-0op">
                                 <rect key="frame" x="0.0" y="235" width="375" height="368"/>
                                 <subviews>
@@ -381,12 +385,16 @@ Try to guess the right artist.</string>
                             <constraint firstItem="unc-34-kLU" firstAttribute="top" secondItem="fdg-HE-kyU" secondAttribute="bottom" id="CTf-yG-XId"/>
                             <constraint firstItem="nfG-2l-fn7" firstAttribute="leading" secondItem="pt7-F4-VSP" secondAttribute="leading" id="CrV-66-0HQ"/>
                             <constraint firstItem="zcB-Ep-0op" firstAttribute="leading" secondItem="pt7-F4-VSP" secondAttribute="leading" id="IhA-6N-uLz"/>
+                            <constraint firstItem="3VU-zP-FT6" firstAttribute="trailing" secondItem="unc-34-kLU" secondAttribute="trailing" id="JMm-3T-vQJ"/>
                             <constraint firstItem="qTr-qN-cWI" firstAttribute="top" secondItem="qO1-2U-1g5" secondAttribute="bottom" constant="8" id="OlU-Rr-3YS"/>
                             <constraint firstItem="zcB-Ep-0op" firstAttribute="trailing" secondItem="pt7-F4-VSP" secondAttribute="trailing" id="QFj-Ig-jwS"/>
                             <constraint firstItem="nfG-2l-fn7" firstAttribute="top" secondItem="qTr-qN-cWI" secondAttribute="bottom" constant="40" id="QYC-id-HiM"/>
+                            <constraint firstItem="3VU-zP-FT6" firstAttribute="bottom" secondItem="unc-34-kLU" secondAttribute="bottom" id="UIs-EF-mBO"/>
                             <constraint firstAttribute="trailing" secondItem="unc-34-kLU" secondAttribute="trailing" id="dbD-8g-Xqk"/>
                             <constraint firstItem="qO1-2U-1g5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eTQ-lH-aEG"/>
+                            <constraint firstItem="3VU-zP-FT6" firstAttribute="top" secondItem="unc-34-kLU" secondAttribute="top" id="eYn-fN-h3C"/>
                             <constraint firstItem="qTr-qN-cWI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gO1-GI-fhF"/>
+                            <constraint firstItem="3VU-zP-FT6" firstAttribute="leading" secondItem="unc-34-kLU" secondAttribute="leading" id="hft-LZ-d6p"/>
                             <constraint firstItem="zcB-Ep-0op" firstAttribute="top" secondItem="nfG-2l-fn7" secondAttribute="bottom" id="mVF-84-HwN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pt7-F4-VSP"/>
