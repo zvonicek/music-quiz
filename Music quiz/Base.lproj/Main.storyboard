@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dgc-mM-dvI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="z66-aV-uGw">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -263,7 +263,7 @@ Try to guess the right artist.</string>
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="answer1Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hHV-DU-GIf"/>
+                                                    <action selector="answer0Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yuj-Xk-Lhg"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTl-xb-1z6" userLabel="Answer2">
@@ -273,8 +273,7 @@ Try to guess the right artist.</string>
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="answer1Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fP4-qL-7sf"/>
-                                                    <action selector="answer2Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YLF-Sa-C2D"/>
+                                                    <action selector="answer1Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YqG-aU-raJ"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ao-fk-Kcz" userLabel="Answer3">
@@ -284,8 +283,7 @@ Try to guess the right artist.</string>
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="answer1Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OdH-OZ-FKV"/>
-                                                    <action selector="answer3Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K2C-Eq-U2d"/>
+                                                    <action selector="answer2Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PNa-eC-yF1"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2gW-ac-QNl" userLabel="Answer4">
@@ -295,8 +293,7 @@ Try to guess the right artist.</string>
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="answer1Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TNw-hE-Kfb"/>
-                                                    <action selector="answer4Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="adl-KJ-8Je"/>
+                                                    <action selector="answer3Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vDG-Ha-AB2"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -381,10 +378,10 @@ Try to guess the right artist.</string>
                     </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="3dH-tk-ecm" id="LEw-Am-no0"/>
-                        <outlet property="answer1" destination="uG3-i6-EOI" id="jdl-lQ-c9u"/>
-                        <outlet property="answer2" destination="gTl-xb-1z6" id="7Zw-5F-kGZ"/>
-                        <outlet property="answer3" destination="8ao-fk-Kcz" id="0Gn-94-e4d"/>
-                        <outlet property="answer4" destination="2gW-ac-QNl" id="a42-Tc-PGF"/>
+                        <outlet property="answer0" destination="uG3-i6-EOI" id="igd-xc-Ea2"/>
+                        <outlet property="answer1" destination="gTl-xb-1z6" id="hlA-EJ-kio"/>
+                        <outlet property="answer2" destination="8ao-fk-Kcz" id="eUk-gS-mh5"/>
+                        <outlet property="answer3" destination="2gW-ac-QNl" id="mPt-QX-2tA"/>
                         <outlet property="coverImageView" destination="unc-34-kLU" id="dIy-XM-Ois"/>
                         <outlet property="progressConstraint" destination="e7p-vQ-6Uw" id="Ros-9b-LLh"/>
                     </connections>
