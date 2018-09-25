@@ -56,6 +56,7 @@ class QuizViewController: UIViewController, AudioControllerDelegate {
         self.state = QuizState(originalTracks: targetTracks, remainingTracks: targetTracks, points: 0)
         self.loadRandomSong()
         layoutButtons()
+        coverImageView.downloadedFrom(url: playlist.coverUrl!)
 
         AudioController.sharedInstance.delegate = self
     }
