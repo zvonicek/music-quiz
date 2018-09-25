@@ -20,4 +20,6 @@ class PlaylistViewController: UIViewController {
         self.playlistCover.layer.cornerRadius = 8
         self.startGameButton.layer.cornerRadius = 30
     }
+
+
 }
