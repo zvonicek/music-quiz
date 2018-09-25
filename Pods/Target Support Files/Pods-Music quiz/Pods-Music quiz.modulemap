@@ -1,0 +1,6 @@
+framework module Pods_Music_quiz {
+  umbrella header "Pods-Music quiz-umbrella.h"
+
+  export *
+  module * { export * }
+}
