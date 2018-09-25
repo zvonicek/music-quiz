@@ -12,6 +12,10 @@ struct QuizState {
     let originalTracks: [Track]
     var remainingTracks: [Track]
     var points: Float
+
+    var progressText: String {
+        return "\(originalTracks.count-remainingTracks.count) / \(originalTracks.count)"
+    }
 }
 
 class QuizViewController: UIViewController, AudioControllerDelegate {
@@ -22,9 +26,21 @@ class QuizViewController: UIViewController, AudioControllerDelegate {
     @IBOutlet weak var answer3: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var progressConstraint: NSLayoutConstraint!
+    @IBOutlet weak var scoreLabel: UILabel!
 
+<<<<<<< Updated upstream
     var state: QuizState?
     var playlistTracks: [Track] = []
+=======
+    var state: QuizState? {
+        didSet {
+            self.title = state?.progressText
+            if let state = state {
+                self.scoreLabel.text = "\(Int(state.points))"
+            }
+        }
+    }
+>>>>>>> Stashed changes
 
     let trackDuration: Float = 10.0
     var pastDuration: Float = 0.0
@@ -36,13 +52,44 @@ class QuizViewController: UIViewController, AudioControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+<<<<<<< Updated upstream
         playlistTracks.shuffle()
         let targetTracks = Array(playlistTracks.prefix(self.numberOfTracks))
 
         self.state = QuizState(originalTracks: targetTracks, remainingTracks: targetTracks, points: 0)
         self.loadRandomSong()
+=======
+        layoutButtons()
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            SpotifyAPI.sharedInstance.getPlaylist(playlistId: "37i9dQZF1DWWGFQLoP9qlv") { (playlist:Playlist) in
+                
+                var targetTracks = playlist.tracks.filter { $0.previewURL != nil }
+                targetTracks.shuffle()
+                targetTracks = Array(targetTracks.prefix(self.numberOfTracks))
+
+                self.state = QuizState(originalTracks: targetTracks, remainingTracks: targetTracks, points: 0)
+                self.loadRandomSong()
+            }
+        }
+>>>>>>> Stashed changes
         
         AudioController.sharedInstance.delegate = self
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        AudioController.sharedInstance.pauseAudio()
+    }
+
+    func layoutButtons() {
+        let buttons = [answer0, answer1, answer2, answer3]
+        buttons.forEach {
+            $0?.layer.cornerRadius = 30
+            $0?.layer.borderColor = #colorLiteral(red: 0.5254901961, green: 0.5254901961, blue: 0.5254901961, alpha: 1)
+            $0?.layer.borderWidth = 2
+        }
     }
 
     func loadRandomSong() {
@@ -91,20 +138,27 @@ class QuizViewController: UIViewController, AudioControllerDelegate {
         isPlaying = false
 
         let buttons = [answer0, answer1, answer2, answer3]
-        buttons[correctAnswerIndex]?.setTitleColor(.green, for: .normal)
 
         if let selectedIndex = selectedIndex, selectedIndex != correctAnswerIndex {
             // incorrect answer
-            buttons[selectedIndex]?.setTitleColor(.red, for: .normal)
+            buttons[correctAnswerIndex]?.layer.borderColor = #colorLiteral(red: 0.06663694233, green: 0.7623470426, blue: 0.3990229666, alpha: 1)
+            buttons[correctAnswerIndex]?.setTitleColor(#colorLiteral(red: 0.06663694233, green: 0.7623470426, blue: 0.3990229666, alpha: 1), for: .normal)
+            buttons[selectedIndex]?.backgroundColor = #colorLiteral(red: 0.7450980392, green: 0.09803921569, blue: 0.06274509804, alpha: 1)
+            buttons[selectedIndex]?.layer.borderColor = #colorLiteral(red: 0.7450980392, green: 0.09803921569, blue: 0.06274509804, alpha: 1)
         } else {
             // correct answer
+            buttons[correctAnswerIndex]?.backgroundColor = #colorLiteral(red: 0.06663694233, green: 0.7623470426, blue: 0.3990229666, alpha: 1)
+            buttons[correctAnswerIndex]?.layer.borderColor = #colorLiteral(red: 0.06663694233, green: 0.7623470426, blue: 0.3990229666, alpha: 1)
+
             state?.points += trackDuration - pastDuration
         }
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             print("load")
             buttons.forEach { button in
-                button?.setTitleColor(UIColor.black, for: .normal)
+                button?.backgroundColor = .clear
+                button?.setTitleColor(.white, for: .normal)
+                button?.layer.borderColor = #colorLiteral(red: 0.5254901961, green: 0.5254901961, blue: 0.5254901961, alpha: 1)
             }
 
             self.loadRandomSong()
