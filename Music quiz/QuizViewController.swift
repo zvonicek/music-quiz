@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 struct QuizState {
     let originalTracks: [Track]
@@ -127,12 +128,14 @@ class QuizViewController: UIViewController, AudioControllerDelegate {
             buttons[correctAnswerIndex]?.setTitleColor(#colorLiteral(red: 0.06663694233, green: 0.7623470426, blue: 0.3990229666, alpha: 1), for: .normal)
             buttons[selectedIndex]?.backgroundColor = #colorLiteral(red: 0.7450980392, green: 0.09803921569, blue: 0.06274509804, alpha: 1)
             buttons[selectedIndex]?.layer.borderColor = #colorLiteral(red: 0.7450980392, green: 0.09803921569, blue: 0.06274509804, alpha: 1)
+            playActionSound(success: false)
         } else {
             // correct answer
             buttons[correctAnswerIndex]?.backgroundColor = #colorLiteral(red: 0.06663694233, green: 0.7623470426, blue: 0.3990229666, alpha: 1)
             buttons[correctAnswerIndex]?.layer.borderColor = #colorLiteral(red: 0.06663694233, green: 0.7623470426, blue: 0.3990229666, alpha: 1)
 
             state?.points += trackDuration - pastDuration
+            playActionSound(success: true)
         }
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
@@ -145,6 +148,15 @@ class QuizViewController: UIViewController, AudioControllerDelegate {
 
             self.loadRandomSong()
         }
+    }
+
+    private func playActionSound(success: Bool) {
+        let resource = success ? "success" : "error"
+
+        guard let url = Bundle.main.url(forResource: resource, withExtension: "m4a") else { return }
+        let soundPlayer = try! AVAudioPlayer(contentsOf: url)
+        soundPlayer.prepareToPlay()
+        soundPlayer.play()
     }
 
     // MARK: - Button actions
