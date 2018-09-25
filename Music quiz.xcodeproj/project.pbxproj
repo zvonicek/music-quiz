@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		66D63B57215A41A600FABDB6 /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D63B56215A41A600FABDB6 /* PlaylistViewController.swift */; };
 		B94BE0BB215A25F80088CDAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94BE0BA215A25F80088CDAB /* AppDelegate.swift */; };
 		B94BE0BD215A25F80088CDAB /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94BE0BC215A25F80088CDAB /* QuizViewController.swift */; };
 		B94BE0C0215A25F80088CDAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94BE0BE215A25F80088CDAB /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		027646B6A128F92FF1C511B0 /* Pods-Music quiz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Music quiz.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Music quiz/Pods-Music quiz.debug.xcconfig"; sourceTree = "<group>"; };
+		66D63B56215A41A600FABDB6 /* PlaylistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
 		9566920A518487BC7F8801DE /* Pods-Music quiz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Music quiz.release.xcconfig"; path = "Pods/Target Support Files/Pods-Music quiz/Pods-Music quiz.release.xcconfig"; sourceTree = "<group>"; };
 		B94BE0B7215A25F80088CDAB /* Music quiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Music quiz.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B94BE0BA215A25F80088CDAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				B94BE0D0215A38160088CDAB /* ChoosePlaylistViewController.swift */,
 				D01574C4215A32C2005FD6EA /* Spotify.swift */,
 				B94BE0BE215A25F80088CDAB /* Main.storyboard */,
+				66D63B56215A41A600FABDB6 /* PlaylistViewController.swift */,
 				B94BE0C1215A25FA0088CDAB /* Assets.xcassets */,
 				B94BE0C3215A25FA0088CDAB /* LaunchScreen.storyboard */,
 				B94BE0C6215A25FB0088CDAB /* Info.plist */,
@@ -223,6 +226,7 @@
 				D01574C5215A32C2005FD6EA /* Model.swift in Sources */,
 				B94BE0D3215A38600088CDAB /* UIModels.swift in Sources */,
 				D01574C7215A32C2005FD6EA /* MusicViewController.swift in Sources */,
+				66D63B57215A41A600FABDB6 /* PlaylistViewController.swift in Sources */,
 				B94BE0BD215A25F80088CDAB /* QuizViewController.swift in Sources */,
 				D01574C6215A32C2005FD6EA /* AudioController.swift in Sources */,
 				B94BE0BB215A25F80088CDAB /* AppDelegate.swift in Sources */,
