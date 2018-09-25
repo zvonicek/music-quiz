@@ -89,7 +89,7 @@ class SpotifyAPI: NSObject {
         let request = NSMutableURLRequest(url: url)
         request.httpMethod = "POST"
 
-        request.addValue("Basic MzgyM2I1YjkwNjY3NDJhY2I0YmRjMzA3MzgyNTAwMzE6MjRiNzlkNjM5NWM5NGI2YThiYzMwNzJhYjFiNzYzNWI=", forHTTPHeaderField: "Authorization")
+        request.addValue("Basic MzgyM2I1YjkwNjY3NDJhY2I0YmRjMzA3MzgyNTAwMzE6ODc4MjQ5ODdjYmVkNGY4Njg3MjRjMWI0OTY5OWM2ZDY=", forHTTPHeaderField: "Authorization")
         request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
 
         let bodyString = "grant_type=client_credentials"
