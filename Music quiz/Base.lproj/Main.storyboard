@@ -147,13 +147,24 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="X7L-VF-VgO">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="UFa-6w-WQ1" customClass="PlaylistCollectionViewCell" customModule="Music_quiz" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wJF-3m-G10">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                </imageView>
+                                            </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="wJF-3m-G10" firstAttribute="top" secondItem="UFa-6w-WQ1" secondAttribute="top" id="5PN-P0-Bc6"/>
+                                            <constraint firstItem="wJF-3m-G10" firstAttribute="leading" secondItem="UFa-6w-WQ1" secondAttribute="leading" id="XpQ-zs-AL8"/>
+                                            <constraint firstAttribute="trailing" secondItem="wJF-3m-G10" secondAttribute="trailing" id="aw6-I4-VVw"/>
+                                            <constraint firstAttribute="bottom" secondItem="wJF-3m-G10" secondAttribute="bottom" id="fa0-Af-mB9"/>
+                                        </constraints>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>

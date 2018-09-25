@@ -14,6 +14,8 @@
 		B94BE0C5215A25FA0088CDAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94BE0C3215A25FA0088CDAB /* LaunchScreen.storyboard */; };
 		B94BE0D1215A38160088CDAB /* ChoosePlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94BE0D0215A38160088CDAB /* ChoosePlaylistViewController.swift */; };
 		B94BE0D3215A38600088CDAB /* UIModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94BE0D2215A38600088CDAB /* UIModels.swift */; };
+		B94BE0DD215A422D0088CDAB /* PlaylistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94BE0DB215A422D0088CDAB /* PlaylistCell.swift */; };
+		B94BE0DE215A422D0088CDAB /* PlaylistCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B94BE0DC215A422D0088CDAB /* PlaylistCell.xib */; };
 		D01574C5215A32C2005FD6EA /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01574C1215A32C1005FD6EA /* Model.swift */; };
 		D01574C6215A32C2005FD6EA /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01574C2215A32C1005FD6EA /* AudioController.swift */; };
 		D01574C7215A32C2005FD6EA /* MusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01574C3215A32C2005FD6EA /* MusicViewController.swift */; };
@@ -33,6 +35,8 @@
 		B94BE0C6215A25FB0088CDAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B94BE0D0215A38160088CDAB /* ChoosePlaylistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePlaylistViewController.swift; sourceTree = "<group>"; };
 		B94BE0D2215A38600088CDAB /* UIModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIModels.swift; sourceTree = "<group>"; };
+		B94BE0DB215A422D0088CDAB /* PlaylistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistCell.swift; sourceTree = "<group>"; };
+		B94BE0DC215A422D0088CDAB /* PlaylistCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaylistCell.xib; sourceTree = "<group>"; };
 		D01574C1215A32C1005FD6EA /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		D01574C2215A32C1005FD6EA /* AudioController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioController.swift; sourceTree = "<group>"; };
 		D01574C3215A32C2005FD6EA /* MusicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +86,7 @@
 		B94BE0B9215A25F80088CDAB /* Music quiz */ = {
 			isa = PBXGroup;
 			children = (
+				B94BE0D4215A3A880088CDAB /* PlaylistCell */,
 				B94BE0BA215A25F80088CDAB /* AppDelegate.swift */,
 				B94BE0BC215A25F80088CDAB /* QuizViewController.swift */,
 				D01574C2215A32C1005FD6EA /* AudioController.swift */,
@@ -96,6 +101,15 @@
 				B94BE0C6215A25FB0088CDAB /* Info.plist */,
 			);
 			path = "Music quiz";
+			sourceTree = "<group>";
+		};
+		B94BE0D4215A3A880088CDAB /* PlaylistCell */ = {
+			isa = PBXGroup;
+			children = (
+				B94BE0DB215A422D0088CDAB /* PlaylistCell.swift */,
+				B94BE0DC215A422D0088CDAB /* PlaylistCell.xib */,
+			);
+			path = PlaylistCell;
 			sourceTree = "<group>";
 		};
 		CEFC57F146FC9D46A605697A /* Frameworks */ = {
@@ -168,6 +182,7 @@
 			files = (
 				B94BE0C5215A25FA0088CDAB /* LaunchScreen.storyboard in Resources */,
 				B94BE0C2215A25FA0088CDAB /* Assets.xcassets in Resources */,
+				B94BE0DE215A422D0088CDAB /* PlaylistCell.xib in Resources */,
 				B94BE0C0215A25F80088CDAB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -220,6 +235,7 @@
 			files = (
 				D01574C8215A32C2005FD6EA /* Spotify.swift in Sources */,
 				B94BE0D1215A38160088CDAB /* ChoosePlaylistViewController.swift in Sources */,
+				B94BE0DD215A422D0088CDAB /* PlaylistCell.swift in Sources */,
 				D01574C5215A32C2005FD6EA /* Model.swift in Sources */,
 				B94BE0D3215A38600088CDAB /* UIModels.swift in Sources */,
 				D01574C7215A32C2005FD6EA /* MusicViewController.swift in Sources */,
