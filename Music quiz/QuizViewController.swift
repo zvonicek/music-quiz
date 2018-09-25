@@ -84,7 +84,7 @@ class QuizViewController: UIViewController, AudioControllerDelegate {
                 }
             }
         } else {
-            // TODO: finish quiz
+            performSegue(withIdentifier: "gameOverPush", sender: nil)
         }
     }
 
@@ -159,14 +159,18 @@ class QuizViewController: UIViewController, AudioControllerDelegate {
         soundPlayer.prepareToPlay()
         soundPlayer.play()
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        (segue.destination as! GameOverViewController).quizState = state
+        (segue.destination as! GameOverViewController).playlist = playlist
+    }
     
     @IBAction func giveUpButton(_ sender: Any) {
         let giveUpAlert = UIAlertController(title: "Do you want to give up?", message: nil, preferredStyle: .alert)
         let giveUpAction = UIAlertAction(title: "Give up", style: .destructive) { (UIAlertAction) in
-            self.navigationController?.popViewController(animated: true)
+            self.navigationController?.popToRootViewController(animated: true)
         }
-        let cancelAction = UIAlertAction(title: "Keep playing", style: .cancel) { (UIAlertAction) in
-        }
+        let cancelAction = UIAlertAction(title: "Keep playing", style: .cancel) { (UIAlertAction) in }
         giveUpAlert.addAction(giveUpAction)
         giveUpAlert.addAction(cancelAction)
         self.present(giveUpAlert, animated: true)
