@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="z66-aV-uGw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dgc-mM-dvI">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -20,9 +20,6 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.070588235294117646" green="0.070588235294117646" blue="0.070588235294117646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="sa3-Lp-14i"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UHp-jS-2hC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -247,12 +244,15 @@ Try to guess the right artist.</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="g9z-zI-wJJ"/>
                     </view>
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="xMB-VK-1pe"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="xMB-VK-1pe">
+                        <barButtonItem key="backBarButtonItem" title=" " id="xpY-mE-XNc"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="bestScore" destination="qun-z7-aob" id="qpG-3g-REu"/>
                         <outlet property="playlistCover" destination="9Ax-13-X46" id="Qbp-oA-uAC"/>
                         <outlet property="playlistName" destination="XX3-58-XAE" id="HvN-2T-YOT"/>
                         <outlet property="startGameButton" destination="GoV-kK-xjx" id="x4S-4c-3da"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="startGamePush" id="iEC-3Q-dqE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hex-bh-xSW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -416,7 +416,7 @@ Try to guess the right artist.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="129" y="419"/>
+            <point key="canvasLocation" x="1794" y="1155"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GSh-jx-cQu">
