@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dgc-mM-dvI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="z66-aV-uGw">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -177,13 +178,37 @@ Try to guess the right artist.</string>
                                     <constraint firstAttribute="width" secondItem="unc-34-kLU" secondAttribute="height" multiplier="1:1" id="R43-GT-QGS"/>
                                 </constraints>
                             </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="3dH-tk-ecm">
+                                <rect key="frame" x="169" y="117" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nfG-2l-fn7">
+                                <rect key="frame" x="0.0" y="422" width="375" height="17"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h2h-f2-riG">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="17"/>
+                                        <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.1137254902" green="0.72941176470000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="h2h-f2-riG" firstAttribute="leading" secondItem="nfG-2l-fn7" secondAttribute="leading" id="D4u-NO-hGu"/>
+                                    <constraint firstItem="h2h-f2-riG" firstAttribute="top" secondItem="nfG-2l-fn7" secondAttribute="top" id="PDA-le-FxU"/>
+                                    <constraint firstAttribute="bottom" secondItem="h2h-f2-riG" secondAttribute="bottom" id="UVn-Yh-3aK"/>
+                                    <constraint firstAttribute="height" constant="17" id="YkX-5G-HEf"/>
+                                    <constraint firstAttribute="trailing" secondItem="h2h-f2-riG" secondAttribute="trailing" id="e7p-vQ-6Uw"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="nfG-2l-fn7" firstAttribute="trailing" secondItem="pt7-F4-VSP" secondAttribute="trailing" id="12J-j3-WKb"/>
                             <constraint firstAttribute="trailing" secondItem="fQU-zD-80w" secondAttribute="trailing" id="3nr-uL-vVp"/>
                             <constraint firstItem="unc-34-kLU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Bwu-2U-M7s"/>
                             <constraint firstItem="unc-34-kLU" firstAttribute="top" secondItem="fdg-HE-kyU" secondAttribute="bottom" id="CTf-yG-XId"/>
+                            <constraint firstItem="nfG-2l-fn7" firstAttribute="leading" secondItem="pt7-F4-VSP" secondAttribute="leading" id="CrV-66-0HQ"/>
                             <constraint firstItem="fQU-zD-80w" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="OHd-za-6m8"/>
+                            <constraint firstItem="fQU-zD-80w" firstAttribute="top" secondItem="nfG-2l-fn7" secondAttribute="bottom" id="Yyp-xx-9ZD"/>
                             <constraint firstAttribute="trailing" secondItem="unc-34-kLU" secondAttribute="trailing" id="dbD-8g-Xqk"/>
                             <constraint firstItem="qBl-EG-9TP" firstAttribute="top" secondItem="fQU-zD-80w" secondAttribute="bottom" id="h7g-fD-XZv"/>
                             <constraint firstItem="fQU-zD-80w" firstAttribute="top" secondItem="unc-34-kLU" secondAttribute="bottom" id="zGA-gR-bs9"/>
@@ -192,11 +217,13 @@ Try to guess the right artist.</string>
                     </view>
                     <navigationItem key="navigationItem" id="I5K-Nf-bGd"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="3dH-tk-ecm" id="LEw-Am-no0"/>
                         <outlet property="answer1" destination="uG3-i6-EOI" id="jdl-lQ-c9u"/>
                         <outlet property="answer2" destination="3c3-92-BlV" id="eZW-px-zQz"/>
                         <outlet property="answer3" destination="dlQ-wA-CtG" id="IW3-mb-wCx"/>
                         <outlet property="answer4" destination="oMa-dX-cZW" id="vQA-ny-7Qc"/>
                         <outlet property="coverImageView" destination="unc-34-kLU" id="dIy-XM-Ois"/>
+                        <outlet property="progressConstraint" destination="e7p-vQ-6Uw" id="Ros-9b-LLh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
