@@ -49,6 +49,8 @@ class QuizViewController: UIViewController, AudioControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationItem.hidesBackButton = true
+
         var playlistTracks = playlist.tracks.filter { $0.previewURL != nil }
         playlistTracks.shuffle()
         let targetTracks = Array(playlistTracks.prefix(self.numberOfTracks))
@@ -77,6 +79,8 @@ class QuizViewController: UIViewController, AudioControllerDelegate {
     }
 
     func loadRandomSong() {
+        progressConstraint.constant = 0
+
         if let track = state?.remainingTracks.popLast() {
             if let artist = track.artists.first {
                 artist.loadSimilarArtist {
@@ -135,7 +139,7 @@ class QuizViewController: UIViewController, AudioControllerDelegate {
             buttons[correctAnswerIndex]?.backgroundColor = #colorLiteral(red: 0.06663694233, green: 0.7623470426, blue: 0.3990229666, alpha: 1)
             buttons[correctAnswerIndex]?.layer.borderColor = #colorLiteral(red: 0.06663694233, green: 0.7623470426, blue: 0.3990229666, alpha: 1)
 
-            state?.points += trackDuration - pastDuration
+            state?.points += (trackDuration - pastDuration) * 10
             playActionSound(success: true)
         }
 
@@ -167,10 +171,11 @@ class QuizViewController: UIViewController, AudioControllerDelegate {
     
     @IBAction func giveUpButton(_ sender: Any) {
         let giveUpAlert = UIAlertController(title: "Do you want to give up?", message: nil, preferredStyle: .alert)
-        let giveUpAction = UIAlertAction(title: "Give up", style: .destructive) { (UIAlertAction) in
+        let giveUpAction = UIAlertAction(title: "Give up", style: .destructive){ (UIAlertAction) in
             self.navigationController?.popToRootViewController(animated: true)
         }
-        let cancelAction = UIAlertAction(title: "Keep playing", style: .cancel) { (UIAlertAction) in }
+        let cancelAction = UIAlertAction(title: "Keep playing", style: .cancel)
+
         giveUpAlert.addAction(giveUpAction)
         giveUpAlert.addAction(cancelAction)
         self.present(giveUpAlert, animated: true)
