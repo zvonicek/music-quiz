@@ -225,10 +225,9 @@ class Track:NSObject {
             artists = []
         }
 
-        if let albumJSON = json.value(forKey: "album") {
-            album = Album(json: albumJSON as! NSDictionary)
-        }
-        
+//        if let albumJSON = json.value(forKey: "album") {
+//            album = Album(json: albumJSON as! NSDictionary)
+//        }
     }
     
     func length() -> String {

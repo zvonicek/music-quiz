@@ -32,6 +32,10 @@ class AudioController {
     }
     
     func pauseAudio() {
+        if player == nil {
+            return
+        }
+        
         if player.rate == 0 {
             player.play()
         } else {
