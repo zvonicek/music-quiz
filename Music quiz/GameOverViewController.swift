@@ -16,6 +16,9 @@ class GameOverViewController: UIViewController {
     @IBOutlet weak var bestScore: UILabel!
     @IBOutlet weak var tryAgainButton: UIButton!
     @IBOutlet weak var backToSelectionButton: UIButton!
+
+    var quizState: QuizState!
+    var playlist: Playlist!
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,9 +26,22 @@ class GameOverViewController: UIViewController {
         self.backToSelectionButton.layer.cornerRadius = 30
         self.backToSelectionButton.layer.borderColor = #colorLiteral(red: 0.6, green: 0.6, blue: 0.6, alpha: 1)
         self.backToSelectionButton.layer.borderWidth = 2
+
+        navigationController?.navigationItem.leftBarButtonItem = nil
+
+        finalScore.text = "\(quizState.points)"
+        bestScore.text = "Best score 90"
     }
 
     @IBAction func tryAgainButton(_ sender: Any) {
-        
+        performSegue(withIdentifier: "tryAgainPush", sender: nil)
+    }
+
+    @IBAction func backToSelection(_ sender: Any) {
+        navigationController?.popToRootViewController(animated: true)
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        (segue.destination as! QuizViewController).playlist = playlist
     }
 }

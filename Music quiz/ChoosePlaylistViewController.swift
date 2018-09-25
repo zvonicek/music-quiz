@@ -14,7 +14,7 @@ class ChoosePlaylistViewController: UIViewController {
     @IBOutlet weak var laodingView: UIView!
     @IBOutlet weak var loadingImageView: UIImageView!
 
-    let playlistIds = ["37i9dQZF1DX0BcQWzuB7ZO", "37i9dQZF1DWXRqgorJj26U", "37i9dQZF1DWSQScAbo5nGF", "37i9dQZF1DWTwnEm1IYyoj", "37i9dQZF1DWWGFQLoP9qlv","37i9dQZF1DX4o1oenSJRJd", "37i9dQZF1DXbTxeAdrVG2l"]
+    let playlistIds = ["37i9dQZF1DX0BcQWzuB7ZO", "37i9dQZF1DWXRqgorJj26U", "37i9dQZF1DWSQScAbo5nGF", "37i9dQZF1DWTwnEm1IYyoj", "37i9dQZF1DWWGFQLoP9qlv","37i9dQZF1DX4o1oenSJRJd", "37i9dQZF1DXbTxeAdrVG2l", "7AaBPm8uWl9r6rXdSnCEbL"]
     
     var playlistsViewModels: [PlaylistViewModel] = []
     var playlists: [Playlist] = []
