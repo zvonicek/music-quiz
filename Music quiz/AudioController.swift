@@ -11,7 +11,7 @@ import AVFoundation
 import MediaPlayer
 import UIKit
 
-protocol AudioControllerDelegate {
+protocol AudioControllerDelegate: class {
     func modifySlider(seconds: Float)
 }
 
@@ -19,7 +19,7 @@ class AudioController {
     var player: AVPlayer!
     static let sharedInstance = AudioController()
     var currentURL: String!
-    var delegate: AudioControllerDelegate!
+    weak var delegate: AudioControllerDelegate?
     
     func playPreview(URLString:String) {        
         let url = NSURL(string: URLString)
@@ -48,7 +48,7 @@ class AudioController {
     func observePlayerForInterval() {
         player.addPeriodicTimeObserver(forInterval: CMTimeMake(1000,25000), queue: nil) { (time :CMTime) in
             let seconds = CGFloat(time.value) / CGFloat(time.timescale)
-            self.delegate.modifySlider(seconds: Float(seconds))
+            self.delegate?.modifySlider(seconds: Float(seconds))
         }
     }
 
