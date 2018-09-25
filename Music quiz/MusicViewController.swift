@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  QuizViewController.swift
 //  music_player
 //
 //  Created by yulz on 3/28/17.

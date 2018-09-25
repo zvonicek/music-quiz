@@ -27,10 +27,10 @@
             </objects>
             <point key="canvasLocation" x="-691" y="419"/>
         </scene>
-        <!--View Controller-->
+        <!--Quiz View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Music_quiz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="QuizViewController" customModule="Music_quiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -39,16 +39,32 @@
                                 <rect key="frame" x="0.0" y="439" width="375" height="228"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uG3-i6-EOI">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="76"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="57"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="answer1Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IjW-eM-Ayn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3c3-92-BlV">
+                                        <rect key="frame" x="0.0" y="57" width="375" height="57"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="answer2Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nbg-xJ-0zk"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dlQ-wA-CtG">
-                                        <rect key="frame" x="0.0" y="76" width="375" height="76"/>
+                                        <rect key="frame" x="0.0" y="114" width="375" height="57"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="answer3Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hbO-Xa-CxG"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oMa-dX-cZW">
-                                        <rect key="frame" x="0.0" y="152" width="375" height="76"/>
+                                        <rect key="frame" x="0.0" y="171" width="375" height="57"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="answer4Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GgU-Sk-EHQ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -73,6 +89,13 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="I5K-Nf-bGd"/>
+                    <connections>
+                        <outlet property="answer1" destination="uG3-i6-EOI" id="jdl-lQ-c9u"/>
+                        <outlet property="answer2" destination="3c3-92-BlV" id="eZW-px-zQz"/>
+                        <outlet property="answer3" destination="dlQ-wA-CtG" id="IW3-mb-wCx"/>
+                        <outlet property="answer4" destination="oMa-dX-cZW" id="vQA-ny-7Qc"/>
+                        <outlet property="coverImageView" destination="unc-34-kLU" id="dIy-XM-Ois"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

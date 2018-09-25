@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B94BE0BB215A25F80088CDAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94BE0BA215A25F80088CDAB /* AppDelegate.swift */; };
-		B94BE0BD215A25F80088CDAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94BE0BC215A25F80088CDAB /* ViewController.swift */; };
+		B94BE0BD215A25F80088CDAB /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94BE0BC215A25F80088CDAB /* QuizViewController.swift */; };
 		B94BE0C0215A25F80088CDAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94BE0BE215A25F80088CDAB /* Main.storyboard */; };
 		B94BE0C2215A25FA0088CDAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B94BE0C1215A25FA0088CDAB /* Assets.xcassets */; };
 		B94BE0C5215A25FA0088CDAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94BE0C3215A25FA0088CDAB /* LaunchScreen.storyboard */; };
@@ -24,7 +24,7 @@
 		9566920A518487BC7F8801DE /* Pods-Music quiz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Music quiz.release.xcconfig"; path = "Pods/Target Support Files/Pods-Music quiz/Pods-Music quiz.release.xcconfig"; sourceTree = "<group>"; };
 		B94BE0B7215A25F80088CDAB /* Music quiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Music quiz.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B94BE0BA215A25F80088CDAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B94BE0BC215A25F80088CDAB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B94BE0BC215A25F80088CDAB /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		B94BE0BF215A25F80088CDAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B94BE0C1215A25FA0088CDAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B94BE0C4215A25FA0088CDAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -79,7 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				B94BE0BA215A25F80088CDAB /* AppDelegate.swift */,
-				B94BE0BC215A25F80088CDAB /* ViewController.swift */,
+				B94BE0BC215A25F80088CDAB /* QuizViewController.swift */,
 				D01574C2215A32C1005FD6EA /* AudioController.swift */,
 				D01574C1215A32C1005FD6EA /* Model.swift */,
 				D01574C3215A32C2005FD6EA /* MusicViewController.swift */,
@@ -215,7 +215,7 @@
 				D01574C8215A32C2005FD6EA /* Spotify.swift in Sources */,
 				D01574C5215A32C2005FD6EA /* Model.swift in Sources */,
 				D01574C7215A32C2005FD6EA /* MusicViewController.swift in Sources */,
-				B94BE0BD215A25F80088CDAB /* ViewController.swift in Sources */,
+				B94BE0BD215A25F80088CDAB /* QuizViewController.swift in Sources */,
 				D01574C6215A32C2005FD6EA /* AudioController.swift in Sources */,
 				B94BE0BB215A25F80088CDAB /* AppDelegate.swift in Sources */,
 			);
