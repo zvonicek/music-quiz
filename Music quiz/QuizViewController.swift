@@ -66,7 +66,9 @@ class QuizViewController: UIViewController, AudioControllerDelegate {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 
-        AudioController.sharedInstance.pauseAudio()
+        if AudioController.sharedInstance.player.rate != 0 {
+            AudioController.sharedInstance.pauseAudio()
+        }
     }
 
     func layoutButtons() {
