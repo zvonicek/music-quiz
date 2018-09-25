@@ -155,22 +155,11 @@ class SpotifyAPI: NSObject {
     }
     
     //MARK: Get Playlist
-    func getPlaylist(userId: String, playlistId: String, withCompletion:@escaping (_ albumArray: [Track]) -> Void) {
-        let url = SpotifyURL.getPlaylist(userId: userId, playlistId: playlistId)
+    func getPlaylist(playlistId: String, withCompletion:@escaping (_ playlist: Playlist) -> Void) {
+        let url = SpotifyURL.getPlaylist(playlistId: playlistId)
         let request = createRequest(url: url, method: GET)
         createTask(request: request, completion: { json in
-            let array = json.value(forKey: Key.Items.rawValue) as! [NSDictionary]
-            var albumArray = [Track]()
-            for obj in array {
-                let trackObj = obj.value(forKey: "track") as! NSDictionary
-                let track = Track(json: trackObj)
-
-                if track.previewURL != nil {
-                    // add track only if it have previewURL (may not be available due to geographical reasons)
-                    albumArray.append(track)
-                }
-            }
-            withCompletion(albumArray)
+            withCompletion(Playlist(json: json))
         })
     }
     
@@ -278,8 +267,8 @@ struct SpotifyURL {
     }
     
     //MARK: Playlist URL
-    static func getPlaylist(userId: String, playlistId: String) -> NSURL {
-        let urlString = baseURL + EndPoints.Users.rawValue + "/" + userId + "/playlists/" + playlistId + "/tracks" + "?market=CZ"
+    static func getPlaylist(playlistId: String) -> NSURL {
+        let urlString = baseURL + "playlists/" + playlistId
         return NSURL(string: urlString)!
     }
     

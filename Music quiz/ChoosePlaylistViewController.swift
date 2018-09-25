@@ -61,7 +61,7 @@ extension ChoosePlaylistViewController: UICollectionViewDataSource {
 
 extension ChoosePlaylistViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // TODO
+        performSegue(withIdentifier: "pushToPlaylistDetail", sender: nil)
     }
 }
 

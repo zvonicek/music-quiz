@@ -17,6 +17,7 @@
 		B94BE0D3215A38600088CDAB /* UIModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94BE0D2215A38600088CDAB /* UIModels.swift */; };
 		B94BE0E0215A47F70088CDAB /* PlaylistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94BE0DB215A422D0088CDAB /* PlaylistCell.swift */; };
 		B94BE0E1215A482B0088CDAB /* PlaylistCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B94BE0DC215A422D0088CDAB /* PlaylistCell.xib */; };
+		B94BE0E3215A60760088CDAB /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94BE0E2215A60750088CDAB /* PlaylistViewController.swift */; };
 		D01574C5215A32C2005FD6EA /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01574C1215A32C1005FD6EA /* Model.swift */; };
 		D01574C6215A32C2005FD6EA /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01574C2215A32C1005FD6EA /* AudioController.swift */; };
 		D01574C8215A32C2005FD6EA /* Spotify.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01574C4215A32C2005FD6EA /* Spotify.swift */; };
@@ -38,6 +39,7 @@
 		B94BE0D2215A38600088CDAB /* UIModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIModels.swift; sourceTree = "<group>"; };
 		B94BE0DB215A422D0088CDAB /* PlaylistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistCell.swift; sourceTree = "<group>"; };
 		B94BE0DC215A422D0088CDAB /* PlaylistCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaylistCell.xib; sourceTree = "<group>"; };
+		B94BE0E2215A60750088CDAB /* PlaylistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
 		D01574C1215A32C1005FD6EA /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		D01574C2215A32C1005FD6EA /* AudioController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioController.swift; sourceTree = "<group>"; };
 		D01574C4215A32C2005FD6EA /* Spotify.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spotify.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 			children = (
 				B94BE0D4215A3A880088CDAB /* PlaylistCell */,
 				B94BE0BA215A25F80088CDAB /* AppDelegate.swift */,
+				B94BE0E2215A60750088CDAB /* PlaylistViewController.swift */,
 				B94BE0BC215A25F80088CDAB /* QuizViewController.swift */,
 				D01574C2215A32C1005FD6EA /* AudioController.swift */,
 				D01574C1215A32C1005FD6EA /* Model.swift */,
@@ -239,6 +242,7 @@
 				B94BE0D3215A38600088CDAB /* UIModels.swift in Sources */,
 				B94BE0BD215A25F80088CDAB /* QuizViewController.swift in Sources */,
 				D01574C6215A32C2005FD6EA /* AudioController.swift in Sources */,
+				B94BE0E3215A60760088CDAB /* PlaylistViewController.swift in Sources */,
 				B94BE0BB215A25F80088CDAB /* AppDelegate.swift in Sources */,
 				B94BE0E0215A47F70088CDAB /* PlaylistCell.swift in Sources */,
 				66D63B59215A500600FABDB6 /* GameOverViewController.swift in Sources */,
