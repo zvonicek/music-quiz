@@ -40,6 +40,7 @@ class ChoosePlaylistViewController: UIViewController {
         playlistsCollection.delegate = self
         playlistsCollection.dataSource = self
         playlistsCollection.register(UINib(nibName: "PlaylistCell", bundle: .main), forCellWithReuseIdentifier: "playlistCellID")
+        playlistsCollection.contentInset = UIEdgeInsets(top: 5, left: 0, bottom: 15, right: 0)
 
         let cellWidth = (UIScreen.main.bounds.size.width - 50) / 2
         let flowLayout = playlistsCollection.collectionViewLayout as! UICollectionViewFlowLayout
