@@ -29,10 +29,10 @@ class PlaylistViewController: UIViewController {
     }
 
     @IBAction func startGame(_ sender: Any) {
-        performSegue(withIdentifier: "startGamePush", sender: playlist.tracks)
+        performSegue(withIdentifier: "startGamePush", sender: playlist)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        (segue.destination as! QuizViewController).playlistTracks = sender as! [Track]
+        (segue.destination as! QuizViewController).playlist = sender as! Playlist
     }
 }
