@@ -115,7 +115,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="isK-qT-nUW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="129" y="-343"/>
+            <point key="canvasLocation" x="2729" y="1156"/>
         </scene>
         <!--Playlist View Controller-->
         <scene sceneID="W52-h4-1Kf">
@@ -399,6 +399,7 @@ Try to guess the right artist.</string>
                         <viewLayoutGuide key="safeArea" id="pt7-F4-VSP"/>
                     </view>
                     <navigationItem key="navigationItem" id="I5K-Nf-bGd">
+                        <barButtonItem key="backBarButtonItem" title=" " id="jFU-rv-CFt"/>
                         <barButtonItem key="rightBarButtonItem" title="Give up" id="SZN-G9-7tE">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -415,11 +416,12 @@ Try to guess the right artist.</string>
                         <outlet property="coverImageView" destination="unc-34-kLU" id="dIy-XM-Ois"/>
                         <outlet property="progressConstraint" destination="e7p-vQ-6Uw" id="Ros-9b-LLh"/>
                         <outlet property="scoreLabel" destination="qTr-qN-cWI" id="Hyz-43-HeB"/>
+                        <segue destination="wkh-Uk-AuR" kind="show" identifier="gameOverPush" id="qVH-1F-Wuw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1794" y="1155"/>
+            <point key="canvasLocation" x="1836" y="1155"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GSh-jx-cQu">
@@ -541,28 +543,6 @@ Try to guess the right artist.</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7K3-ww-TUT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="128.80000000000001" y="1156.3718140929536"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="HjJ-aX-aEF">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ouq-sf-Ph3" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="Dgk-yV-Dh6">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.070588235294117646" green="0.070588235294117646" blue="0.070588235294117646" alpha="1" colorSpace="calibratedRGB"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="wkh-Uk-AuR" kind="relationship" relationship="rootViewController" id="kWW-6S-l1v"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="X99-Mn-Weu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-732" y="-343"/>
         </scene>
     </scenes>
     <resources>
