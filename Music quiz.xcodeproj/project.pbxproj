@@ -12,6 +12,10 @@
 		B94BE0C0215A25F80088CDAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94BE0BE215A25F80088CDAB /* Main.storyboard */; };
 		B94BE0C2215A25FA0088CDAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B94BE0C1215A25FA0088CDAB /* Assets.xcassets */; };
 		B94BE0C5215A25FA0088CDAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94BE0C3215A25FA0088CDAB /* LaunchScreen.storyboard */; };
+		D01574C5215A32C2005FD6EA /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01574C1215A32C1005FD6EA /* Model.swift */; };
+		D01574C6215A32C2005FD6EA /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01574C2215A32C1005FD6EA /* AudioController.swift */; };
+		D01574C7215A32C2005FD6EA /* MusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01574C3215A32C2005FD6EA /* MusicViewController.swift */; };
+		D01574C8215A32C2005FD6EA /* Spotify.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01574C4215A32C2005FD6EA /* Spotify.swift */; };
 		E17936888C5FD436806CC76D /* Pods_Music_quiz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E81918F90733AB38D46C59A6 /* Pods_Music_quiz.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +29,10 @@
 		B94BE0C1215A25FA0088CDAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B94BE0C4215A25FA0088CDAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B94BE0C6215A25FB0088CDAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D01574C1215A32C1005FD6EA /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		D01574C2215A32C1005FD6EA /* AudioController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioController.swift; sourceTree = "<group>"; };
+		D01574C3215A32C2005FD6EA /* MusicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicViewController.swift; sourceTree = "<group>"; };
+		D01574C4215A32C2005FD6EA /* Spotify.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spotify.swift; sourceTree = "<group>"; };
 		E81918F90733AB38D46C59A6 /* Pods_Music_quiz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Music_quiz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -72,6 +80,10 @@
 			children = (
 				B94BE0BA215A25F80088CDAB /* AppDelegate.swift */,
 				B94BE0BC215A25F80088CDAB /* ViewController.swift */,
+				D01574C2215A32C1005FD6EA /* AudioController.swift */,
+				D01574C1215A32C1005FD6EA /* Model.swift */,
+				D01574C3215A32C2005FD6EA /* MusicViewController.swift */,
+				D01574C4215A32C2005FD6EA /* Spotify.swift */,
 				B94BE0BE215A25F80088CDAB /* Main.storyboard */,
 				B94BE0C1215A25FA0088CDAB /* Assets.xcassets */,
 				B94BE0C3215A25FA0088CDAB /* LaunchScreen.storyboard */,
@@ -162,15 +174,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Music quiz/Pods-Music quiz-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 			);
@@ -184,15 +192,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Music quiz-checkManifestLockResult.txt",
 			);
@@ -208,7 +212,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D01574C8215A32C2005FD6EA /* Spotify.swift in Sources */,
+				D01574C5215A32C2005FD6EA /* Model.swift in Sources */,
+				D01574C7215A32C2005FD6EA /* MusicViewController.swift in Sources */,
 				B94BE0BD215A25F80088CDAB /* ViewController.swift in Sources */,
+				D01574C6215A32C2005FD6EA /* AudioController.swift in Sources */,
 				B94BE0BB215A25F80088CDAB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
