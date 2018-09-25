@@ -28,5 +28,11 @@ class PlaylistViewController: UIViewController {
         bestScore.text = playlistViewModel.bestScore
     }
 
+    @IBAction func startGame(_ sender: Any) {
+        performSegue(withIdentifier: "startGamePush", sender: playlist.tracks)
+    }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        (segue.destination as! QuizViewController).playlistTracks = sender as! [Track]
+    }
 }

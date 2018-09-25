@@ -24,6 +24,7 @@ class QuizViewController: UIViewController, AudioControllerDelegate {
     @IBOutlet weak var progressConstraint: NSLayoutConstraint!
 
     var state: QuizState?
+    var playlistTracks: [Track] = []
 
     let trackDuration: Float = 10.0
     var pastDuration: Float = 0.0
@@ -35,17 +36,11 @@ class QuizViewController: UIViewController, AudioControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            SpotifyAPI.sharedInstance.getPlaylist(playlistId: "37i9dQZF1DWWGFQLoP9qlv") { (playlist:Playlist) in
-                
-                var targetTracks = playlist.tracks
-                targetTracks.shuffle()
-                targetTracks = Array(targetTracks.prefix(self.numberOfTracks))
+        playlistTracks.shuffle()
+        let targetTracks = Array(playlistTracks.prefix(self.numberOfTracks))
 
-                self.state = QuizState(originalTracks: targetTracks, remainingTracks: targetTracks, points: 0)
-                self.loadRandomSong()
-            }
-        }
+        self.state = QuizState(originalTracks: targetTracks, remainingTracks: targetTracks, points: 0)
+        self.loadRandomSong()
         
         AudioController.sharedInstance.delegate = self
     }

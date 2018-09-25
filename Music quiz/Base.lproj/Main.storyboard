@@ -204,6 +204,9 @@ Try to guess the right artist.</string>
                                         <state key="normal" title="Start a game">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="startGame:" destination="Olc-bB-5Kz" eventType="touchUpInside" id="0Uk-WQ-yQI"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
