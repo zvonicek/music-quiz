@@ -16,9 +16,7 @@ class GameOverViewController: UIViewController {
     @IBOutlet weak var bestScore: UILabel!
     @IBOutlet weak var tryAgainButton: UIButton!
     @IBOutlet weak var backToSelectionButton: UIButton!
-    
-    var soundPlayer: AVAudioPlayer?
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tryAgainButton.layer.cornerRadius = 30

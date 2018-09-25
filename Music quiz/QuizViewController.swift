@@ -158,6 +158,19 @@ class QuizViewController: UIViewController, AudioControllerDelegate {
         soundPlayer.prepareToPlay()
         soundPlayer.play()
     }
+    
+    @IBAction func giveUpButton(_ sender: Any) {
+        let giveUpAlert = UIAlertController(title: "Do you want to give up?", message: nil, preferredStyle: .alert)
+        let giveUpAction = UIAlertAction(title: "Give up", style: .destructive) { (UIAlertAction) in
+            <#code#>
+        }
+        let cancelAction = UIAlertAction(title: "Keep playing", style: .cancel) { (UIAlertAction) in
+        }
+        giveUpAlert.addAction(giveUpAction)
+        giveUpAlert.addAction(cancelAction)
+        self.present(giveUpAlert, animated: true)
+    }
+    
 
     // MARK: - Button actions
 
