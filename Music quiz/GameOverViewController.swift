@@ -29,8 +29,11 @@ class GameOverViewController: UIViewController {
 
         navigationController?.navigationItem.leftBarButtonItem = nil
 
-        finalScore.text = "\(quizState.points)"
-        bestScore.text = "Best score 90"
+        navigationItem.hidesBackButton = true
+
+        finalScore.text = "\(Int(quizState.points))"
+        let best = quizState.points > 90 ? Int(quizState.points) : 90
+        bestScore.text = "Best score \(best)"
     }
 
     @IBAction func tryAgainButton(_ sender: Any) {
