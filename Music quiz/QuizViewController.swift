@@ -36,9 +36,9 @@ class QuizViewController: UIViewController, AudioControllerDelegate {
         super.viewDidLoad()
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            SpotifyAPI.sharedInstance.getPlaylist(userId: "spotify", playlistId: "37i9dQZF1DWWGFQLoP9qlv") { (tracks:[Track]) in
-
-                var targetTracks = tracks
+            SpotifyAPI.sharedInstance.getPlaylist(playlistId: "37i9dQZF1DWWGFQLoP9qlv") { (playlist:Playlist) in
+                
+                var targetTracks = playlist.tracks
                 targetTracks.shuffle()
                 targetTracks = Array(targetTracks.prefix(self.numberOfTracks))
 

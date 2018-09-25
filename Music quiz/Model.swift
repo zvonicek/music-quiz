@@ -9,6 +9,31 @@
 import Foundation
 import UIKit
 
+class Playlist: NSObject {
+    var name: String!
+    var coverUrl: URL?
+    var tracks = [Track]()
+
+    override init() {
+        //
+    }
+
+    init(json: NSDictionary) {
+        super.init()
+
+        name = json["name"] as! String
+        let images = json["images"] as! [[String: Any]]
+        if let image = images.first, let url = image["url"] as? String {
+            coverUrl = URL(string: url)
+        }
+        let array = (json["tracks"] as! NSDictionary).value(forKey: Key.Items.rawValue) as! [NSDictionary]
+        tracks = array.map {
+            let trackObj = $0.value(forKey: "track") as! NSDictionary
+            return Track(json: trackObj)
+        }
+    }
+}
+
 class Artist:NSObject {
     var name :String!
     var id :String!
