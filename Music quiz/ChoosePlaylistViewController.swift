@@ -20,14 +20,12 @@ class ChoosePlaylistViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.playlistIds.forEach { id in
-                SpotifyAPI.sharedInstance.getPlaylist(playlistId: id) { playlist in
-                    self.playlists.append(playlist)
-                    self.playlistsViewModels.append(PlaylistViewModel(playlist: playlist))
-                    DispatchQueue.main.async {
-                        self.playlistsCollection.reloadData()
-                    }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            SpotifyAPI.sharedInstance.getPlaylists(playlistIds: self.playlistIds) { playlists in
+                self.playlists = playlists
+                self.playlistsViewModels = playlists.map(PlaylistViewModel.init)
+                DispatchQueue.main.async {
+                    self.playlistsCollection.reloadData()
                 }
             }
         }

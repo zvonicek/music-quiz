@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import PromiseKit
 
 let GET = "GET"
 let baseURL = "https://api.spotify.com/v1/"
@@ -84,6 +85,26 @@ class SpotifyAPI: NSObject {
         task.resume()
     }
 
+    private func createPromiseTask(request: NSMutableURLRequest) -> Promise<NSDictionary> {
+        return Promise { resolver in
+            let session = URLSession.shared
+            let task = session.dataTask(with: request as URLRequest) { data, response, error in
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data!, options:[]) as! NSDictionary
+                    if let error = json["error"] {
+                        print(error)
+                    }
+                    resolver.fulfill(json)
+                }
+                catch {
+                    print("create task error")
+                    print(error)
+                }
+            }
+            task.resume()
+        }
+    }
+
     func authorize() {
         guard let url = URL(string: "https://accounts.spotify.com/api/token") else {return}
         let request = NSMutableURLRequest(url: url)
@@ -155,12 +176,14 @@ class SpotifyAPI: NSObject {
     }
     
     //MARK: Get Playlist
-    func getPlaylist(playlistId: String, withCompletion:@escaping (_ playlist: Playlist) -> Void) {
-        let url = SpotifyURL.getPlaylist(playlistId: playlistId)
-        let request = createRequest(url: url, method: GET)
-        createTask(request: request, completion: { json in
-            withCompletion(Playlist(json: json))
-        })
+    func getPlaylists(playlistIds: [String], withCompletion:@escaping (_ playlists: [Playlist]) -> Void) {
+        let urls = playlistIds.map { SpotifyURL.getPlaylist(playlistId: $0) }
+        let requests = urls.map { createRequest(url: $0, method: GET) }
+        let promises = requests.map { createPromiseTask(request: $0) }
+        _ = when(fulfilled: promises).done { dicts in
+            let playlists = dicts.map(Playlist.init)
+            withCompletion(playlists)
+        }
     }
     
     //MARK: Get Albums
