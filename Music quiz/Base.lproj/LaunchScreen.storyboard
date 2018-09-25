@@ -1,7 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,13 +17,72 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IGK-E7-jzb">
+                                <rect key="frame" x="67.5" y="200.5" width="240" height="266"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="illustration" translatesAutoresizingMaskIntoConstraints="NO" id="UQq-xA-sLL">
+                                        <rect key="frame" x="48.5" y="0.0" width="143" height="124"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="143" id="QSy-4q-bJC"/>
+                                            <constraint firstAttribute="height" constant="124" id="YqW-2w-zVn"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Can you guess which song is playing?" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ct0-qJ-9ia">
+                                        <rect key="frame" x="35" y="201" width="170" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="170" id="5Kl-zF-Qa2"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="170" id="KSl-Gw-Mga"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="SOK-kd-OQB"/>
+                                            <constraint firstAttribute="height" constant="48" id="U93-iW-0yY"/>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="170" id="ly8-7D-np9"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="48" id="r5b-EX-Ffe"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Music Quiz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Wb-Xx-Tov">
+                                        <rect key="frame" x="20" y="144" width="200" height="41"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="41" id="4YU-Rl-HHo"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="41" id="hah-8e-v81"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="41" id="lBC-M4-NcT"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="pX2-32-Hdo"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="yGG-TO-gvY"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Ct0-qJ-9ia" firstAttribute="centerX" secondItem="IGK-E7-jzb" secondAttribute="centerX" id="6Mz-08-TTq"/>
+                                    <constraint firstAttribute="height" constant="266" id="9HA-M8-ht9"/>
+                                    <constraint firstItem="9Wb-Xx-Tov" firstAttribute="centerX" secondItem="IGK-E7-jzb" secondAttribute="centerX" id="Av2-Ux-0TC"/>
+                                    <constraint firstItem="UQq-xA-sLL" firstAttribute="centerX" secondItem="IGK-E7-jzb" secondAttribute="centerX" id="Dul-gc-bVS"/>
+                                    <constraint firstItem="UQq-xA-sLL" firstAttribute="top" secondItem="IGK-E7-jzb" secondAttribute="top" id="TzP-0a-Oqv"/>
+                                    <constraint firstItem="9Wb-Xx-Tov" firstAttribute="top" secondItem="UQq-xA-sLL" secondAttribute="bottom" constant="20" id="b06-nR-Et0"/>
+                                    <constraint firstItem="Ct0-qJ-9ia" firstAttribute="top" secondItem="9Wb-Xx-Tov" secondAttribute="bottom" constant="16" id="dKZ-iA-JMC"/>
+                                    <constraint firstAttribute="width" constant="240" id="uSp-GM-7RN"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.070588235294117646" green="0.070588235294117646" blue="0.070588235294117646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="IGK-E7-jzb" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="F66-w0-BA7"/>
+                            <constraint firstItem="IGK-E7-jzb" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Op8-Ft-Iby"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="illustration" width="143" height="129"/>
+    </resources>
 </document>
