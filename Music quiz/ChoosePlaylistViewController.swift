@@ -13,7 +13,9 @@ class ChoosePlaylistViewController: UIViewController {
     @IBOutlet weak var playlistsCollection: UICollectionView!
 
     let playlistIds = ["37i9dQZF1DWWGFQLoP9qlv", "37i9dQZF1DXcBWIGoYBM5M", "37i9dQZF1DX186v583rmzp", "37i9dQZF1DXaXB8fQg7xif", "37i9dQZF1DX2ENAPP1Tyed","37i9dQZF1DX6xOPeSOGone"]
-    var playlists: [PlaylistViewModel] = []
+    
+    var playlistsViewModels: [PlaylistViewModel] = []
+    var playlists: [Playlist] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +23,8 @@ class ChoosePlaylistViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             self.playlistIds.forEach { id in
                 SpotifyAPI.sharedInstance.getPlaylist(playlistId: id) { playlist in
-                    self.playlists.append(PlaylistViewModel(playlist: playlist))
+                    self.playlists.append(playlist)
+                    self.playlistsViewModels.append(PlaylistViewModel(playlist: playlist))
                     DispatchQueue.main.async {
                         self.playlistsCollection.reloadData()
                     }
@@ -40,11 +43,18 @@ class ChoosePlaylistViewController: UIViewController {
 
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let sender = sender as! (Playlist, PlaylistViewModel)
+        (segue.destination as! PlaylistViewController).playlist = sender.0
+        (segue.destination as! PlaylistViewController).playlistViewModel = sender.1
+
+    }
+
 }
 
 extension ChoosePlaylistViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return playlists.count
+        return playlistsViewModels.count
     }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -54,14 +64,14 @@ extension ChoosePlaylistViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let playlistCell = collectionView.dequeueReusableCell(withReuseIdentifier: "playlistCellID", for: indexPath) as! PlaylistCell
         
-        playlistCell.configure(with: playlists[indexPath.row].image)
+        playlistCell.configure(with: playlistsViewModels[indexPath.row].image)
         return playlistCell
     }
 }
 
 extension ChoosePlaylistViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "pushToPlaylistDetail", sender: nil)
+        performSegue(withIdentifier: "pushToPlaylistDetail", sender: (playlists[indexPath.row], playlistsViewModels[indexPath.row]))
     }
 }
 

@@ -14,10 +14,25 @@ class PlaylistViewController: UIViewController {
     @IBOutlet weak var playlistName: UILabel!
     @IBOutlet weak var bestScore: UILabel!
     @IBOutlet weak var startGameButton: UIButton!
-    
+
+    var playlist: Playlist!
+    var playlistViewModel: PlaylistViewModel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.playlistCover.layer.cornerRadius = 8
         self.startGameButton.layer.cornerRadius = 30
+
+        playlistCover.downloadedFrom(url: playlistViewModel.image)
+        playlistName.text = playlistViewModel.title
+        bestScore.text = playlistViewModel.bestScore
+    }
+
+    @IBAction func startGame(_ sender: Any) {
+        performSegue(withIdentifier: "startGamePush", sender: playlist.tracks)
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        (segue.destination as! QuizViewController).playlistTracks = sender as! [Track]
     }
 }

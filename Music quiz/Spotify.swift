@@ -268,7 +268,7 @@ struct SpotifyURL {
     
     //MARK: Playlist URL
     static func getPlaylist(playlistId: String) -> NSURL {
-        let urlString = baseURL + "playlists/" + playlistId
+        let urlString = baseURL + "playlists/" + playlistId + "?market=CZ"
         return NSURL(string: urlString)!
     }
     

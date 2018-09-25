@@ -18,10 +18,10 @@
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.070588235294117646" green="0.070588235294117646" blue="0.070588235294117646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="sa3-Lp-14i"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UHp-jS-2hC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -146,30 +146,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Ax-13-X46">
-                                <rect key="frame" x="87.5" y="40" width="200" height="200"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zSI-fk-MeK">
+                                <rect key="frame" x="68" y="51.5" width="240" height="292"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Ax-13-X46">
+                                        <rect key="frame" x="20" y="0.0" width="200" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="MO9-nb-WY2"/>
+                                            <constraint firstAttribute="height" constant="200" id="bpl-cM-qh5"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XX3-58-XAE">
+                                        <rect key="frame" x="77" y="221" width="87" height="41"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best score: X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qun-z7-aob">
+                                        <rect key="frame" x="69" y="272" width="103" height="20"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="MO9-nb-WY2"/>
-                                    <constraint firstAttribute="height" constant="200" id="bpl-cM-qh5"/>
+                                    <constraint firstAttribute="bottom" secondItem="qun-z7-aob" secondAttribute="bottom" id="FE5-Va-eLI"/>
+                                    <constraint firstItem="9Ax-13-X46" firstAttribute="top" secondItem="zSI-fk-MeK" secondAttribute="top" id="Fhi-4q-t8M"/>
+                                    <constraint firstItem="XX3-58-XAE" firstAttribute="centerX" secondItem="zSI-fk-MeK" secondAttribute="centerX" id="Gb7-UF-GIA"/>
+                                    <constraint firstItem="qun-z7-aob" firstAttribute="top" secondItem="XX3-58-XAE" secondAttribute="bottom" constant="10" id="JBK-Sf-VTG"/>
+                                    <constraint firstItem="XX3-58-XAE" firstAttribute="top" secondItem="9Ax-13-X46" secondAttribute="bottom" constant="21" id="ZfL-Th-r4N"/>
+                                    <constraint firstItem="9Ax-13-X46" firstAttribute="centerX" secondItem="zSI-fk-MeK" secondAttribute="centerX" id="ejJ-1E-kMf"/>
+                                    <constraint firstItem="qun-z7-aob" firstAttribute="centerX" secondItem="zSI-fk-MeK" secondAttribute="centerX" id="wPs-qH-ziT"/>
                                 </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XX3-58-XAE">
-                                <rect key="frame" x="144" y="261" width="87" height="41"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best score: X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qun-z7-aob">
-                                <rect key="frame" x="136" y="312" width="103" height="20"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ce9-DM-gdv">
                                 <rect key="frame" x="0.0" y="395" width="375" height="208"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZQ-wA-C0v">
-                                        <rect key="frame" x="81.5" y="40" width="212" height="42.5"/>
+                                        <rect key="frame" x="82" y="40" width="212" height="42.5"/>
                                         <attributedString key="attributedText">
                                             <fragment>
                                                 <string key="content">You’ll hear 10 short previews.
@@ -194,6 +209,9 @@ Try to guess the right artist.</string>
                                         <state key="normal" title="Start a game">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="startGame:" destination="Olc-bB-5Kz" eventType="touchUpInside" id="0Uk-WQ-yQI"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -207,31 +225,47 @@ Try to guess the right artist.</string>
                                     <constraint firstItem="TZQ-wA-C0v" firstAttribute="centerX" secondItem="ce9-DM-gdv" secondAttribute="centerX" id="aZc-as-T4m"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="221-rB-vCJ">
+                                <rect key="frame" x="55" y="343.5" width="240" height="51.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aGg-RH-jgd">
+                                <rect key="frame" x="42" y="0.0" width="240" height="51.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.070588235294117646" green="0.070588235294117646" blue="0.070588235294117646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="XX3-58-XAE" firstAttribute="centerX" secondItem="Hvl-W0-hrx" secondAttribute="centerX" id="8SO-9Y-kFQ"/>
-                            <constraint firstItem="9Ax-13-X46" firstAttribute="top" secondItem="xra-CI-aKJ" secondAttribute="bottom" constant="40" id="F1t-vh-8xq"/>
+                            <constraint firstItem="aGg-RH-jgd" firstAttribute="top" secondItem="xra-CI-aKJ" secondAttribute="bottom" id="2Sr-4l-jZk"/>
+                            <constraint firstItem="g9z-zI-wJJ" firstAttribute="trailing" secondItem="221-rB-vCJ" secondAttribute="trailing" constant="80" id="460-AA-eh5"/>
+                            <constraint firstItem="zSI-fk-MeK" firstAttribute="leading" secondItem="g9z-zI-wJJ" secondAttribute="leading" constant="68" id="4WW-n6-0hf"/>
+                            <constraint firstItem="zSI-fk-MeK" firstAttribute="top" secondItem="aGg-RH-jgd" secondAttribute="bottom" id="G0B-k5-6hg"/>
+                            <constraint firstItem="aGg-RH-jgd" firstAttribute="leading" secondItem="g9z-zI-wJJ" secondAttribute="leading" constant="42" id="MXf-7V-g6O"/>
+                            <constraint firstItem="221-rB-vCJ" firstAttribute="leading" secondItem="g9z-zI-wJJ" secondAttribute="leading" constant="55" id="OlR-E7-tiM"/>
+                            <constraint firstItem="ce9-DM-gdv" firstAttribute="top" secondItem="221-rB-vCJ" secondAttribute="bottom" id="Twb-se-R9r"/>
                             <constraint firstItem="ce9-DM-gdv" firstAttribute="bottom" secondItem="8SE-ZU-G8g" secondAttribute="top" id="Whe-tg-maz"/>
+                            <constraint firstItem="g9z-zI-wJJ" firstAttribute="trailing" secondItem="aGg-RH-jgd" secondAttribute="trailing" constant="93" id="aKc-xa-5vh"/>
                             <constraint firstItem="ce9-DM-gdv" firstAttribute="centerX" secondItem="Hvl-W0-hrx" secondAttribute="centerX" id="dqS-15-Loq"/>
-                            <constraint firstItem="XX3-58-XAE" firstAttribute="top" secondItem="9Ax-13-X46" secondAttribute="bottom" constant="21" id="gdh-cz-99F"/>
-                            <constraint firstItem="9Ax-13-X46" firstAttribute="centerX" secondItem="Hvl-W0-hrx" secondAttribute="centerX" id="jFw-8d-drJ"/>
-                            <constraint firstItem="qun-z7-aob" firstAttribute="top" secondItem="XX3-58-XAE" secondAttribute="bottom" constant="10" id="jP4-B1-5gj"/>
-                            <constraint firstItem="qun-z7-aob" firstAttribute="centerX" secondItem="Hvl-W0-hrx" secondAttribute="centerX" id="rCJ-0t-V8n"/>
+                            <constraint firstItem="221-rB-vCJ" firstAttribute="top" secondItem="zSI-fk-MeK" secondAttribute="bottom" id="sHx-IP-ve1"/>
+                            <constraint firstItem="221-rB-vCJ" firstAttribute="height" secondItem="aGg-RH-jgd" secondAttribute="height" id="wrR-k7-spR"/>
+                            <constraint firstItem="zSI-fk-MeK" firstAttribute="centerX" secondItem="ce9-DM-gdv" secondAttribute="centerX" id="zY7-7u-Hbv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="g9z-zI-wJJ"/>
                     </view>
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="xMB-VK-1pe"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="xMB-VK-1pe">
+                        <barButtonItem key="backBarButtonItem" title=" " id="xpY-mE-XNc"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="bestScore" destination="qun-z7-aob" id="qpG-3g-REu"/>
                         <outlet property="playlistCover" destination="9Ax-13-X46" id="Qbp-oA-uAC"/>
                         <outlet property="playlistName" destination="XX3-58-XAE" id="HvN-2T-YOT"/>
                         <outlet property="startGameButton" destination="GoV-kK-xjx" id="x4S-4c-3da"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="startGamePush" id="iEC-3Q-dqE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hex-bh-xSW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="964" y="1156"/>
+            <point key="canvasLocation" x="964" y="1155.472263868066"/>
         </scene>
         <!--Quiz View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -261,44 +295,41 @@ Try to guess the right artist.</string>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uG3-i6-EOI">
                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="16"/>
-                                                <state key="normal" title="Button">
+                                                <state key="normal">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="answer1Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hHV-DU-GIf"/>
+                                                    <action selector="answer0Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yuj-Xk-Lhg"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTl-xb-1z6" userLabel="Answer2">
                                                 <rect key="frame" x="0.0" y="76" width="343" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="16"/>
-                                                <state key="normal" title="Button">
+                                                <state key="normal">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="answer1Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fP4-qL-7sf"/>
-                                                    <action selector="answer2Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YLF-Sa-C2D"/>
+                                                    <action selector="answer1Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YqG-aU-raJ"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ao-fk-Kcz" userLabel="Answer3">
                                                 <rect key="frame" x="0.0" y="152" width="343" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="16"/>
-                                                <state key="normal" title="Button">
+                                                <state key="normal">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="answer1Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OdH-OZ-FKV"/>
-                                                    <action selector="answer3Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K2C-Eq-U2d"/>
+                                                    <action selector="answer2Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PNa-eC-yF1"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2gW-ac-QNl" userLabel="Answer4">
                                                 <rect key="frame" x="0.0" y="228" width="343" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="16"/>
-                                                <state key="normal" title="Button">
+                                                <state key="normal">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="answer1Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TNw-hE-Kfb"/>
-                                                    <action selector="answer4Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="adl-KJ-8Je"/>
+                                                    <action selector="answer3Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vDG-Ha-AB2"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -383,17 +414,18 @@ Try to guess the right artist.</string>
                     </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="3dH-tk-ecm" id="LEw-Am-no0"/>
-                        <outlet property="answer1" destination="uG3-i6-EOI" id="jdl-lQ-c9u"/>
-                        <outlet property="answer2" destination="gTl-xb-1z6" id="7Zw-5F-kGZ"/>
-                        <outlet property="answer3" destination="8ao-fk-Kcz" id="0Gn-94-e4d"/>
-                        <outlet property="answer4" destination="2gW-ac-QNl" id="a42-Tc-PGF"/>
+                        <outlet property="answer0" destination="uG3-i6-EOI" id="igd-xc-Ea2"/>
+                        <outlet property="answer1" destination="gTl-xb-1z6" id="hlA-EJ-kio"/>
+                        <outlet property="answer2" destination="8ao-fk-Kcz" id="eUk-gS-mh5"/>
+                        <outlet property="answer3" destination="2gW-ac-QNl" id="mPt-QX-2tA"/>
                         <outlet property="coverImageView" destination="unc-34-kLU" id="dIy-XM-Ois"/>
                         <outlet property="progressConstraint" destination="e7p-vQ-6Uw" id="Ros-9b-LLh"/>
+                        <outlet property="scoreLabel" destination="qTr-qN-cWI" id="Hyz-43-HeB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="129" y="419"/>
+            <point key="canvasLocation" x="1794" y="1155"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GSh-jx-cQu">
@@ -404,7 +436,7 @@ Try to guess the right artist.</string>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.070588235294117646" green="0.070588235294117646" blue="0.070588235294117646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </textAttributes>
@@ -437,7 +469,7 @@ Try to guess the right artist.</string>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="koB-j4-mjd">
                                 <rect key="frame" x="15" y="51" width="345" height="500"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.070588235294117646" green="0.070588235294117646" blue="0.070588235294117646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="y2A-Nl-62U">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -467,7 +499,7 @@ Try to guess the right artist.</string>
                                 </cells>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.070588235294117646" green="0.070588235294117646" blue="0.070588235294117646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="koB-j4-mjd" firstAttribute="leading" secondItem="w0A-5K-7fJ" secondAttribute="leading" constant="15" id="1Gs-9O-JE4"/>
                             <constraint firstItem="Xw6-4i-P1t" firstAttribute="top" secondItem="Mpp-fE-hQ2" secondAttribute="bottom" constant="20" id="6mJ-Ti-u5G"/>
