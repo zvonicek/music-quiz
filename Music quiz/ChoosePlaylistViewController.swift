@@ -12,16 +12,22 @@ class ChoosePlaylistViewController: UIViewController {
 
     @IBOutlet weak var playlistsCollection: UICollectionView!
 
-
-    var playlists: [PlaylistViewModel] = [
-        PlaylistViewModel(image: #imageLiteral(resourceName: "tmpPL"), title: "Indie Chill", bestScore: "91"),
-        PlaylistViewModel(image: #imageLiteral(resourceName: "tmpPL"), title: "Indie Chill", bestScore: "91"),
-        PlaylistViewModel(image: #imageLiteral(resourceName: "tmpPL"), title: "Indie Chill", bestScore: "91"),
-        PlaylistViewModel(image: #imageLiteral(resourceName: "tmpPL"), title: "Indie Chill", bestScore: "91")
-    ]
+    let playlistIds = ["37i9dQZF1DWWGFQLoP9qlv", "37i9dQZF1DXcBWIGoYBM5M", "37i9dQZF1DX186v583rmzp", "37i9dQZF1DXaXB8fQg7xif", "37i9dQZF1DX2ENAPP1Tyed","37i9dQZF1DX6xOPeSOGone"]
+    var playlists: [PlaylistViewModel] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.playlistIds.forEach { id in
+                SpotifyAPI.sharedInstance.getPlaylist(playlistId: id) { playlist in
+                    self.playlists.append(PlaylistViewModel(playlist: playlist))
+                    DispatchQueue.main.async {
+                        self.playlistsCollection.reloadData()
+                    }
+                }
+            }
+        }
 
         playlistsCollection.delegate = self
         playlistsCollection.dataSource = self
@@ -55,7 +61,7 @@ extension ChoosePlaylistViewController: UICollectionViewDataSource {
 
 extension ChoosePlaylistViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // TODO
+        performSegue(withIdentifier: "pushToPlaylistDetail", sender: nil)
     }
 }
 

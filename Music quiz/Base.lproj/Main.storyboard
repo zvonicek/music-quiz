@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="z66-aV-uGw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dgc-mM-dvI">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -218,7 +219,7 @@ Try to guess the right artist.</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="g9z-zI-wJJ"/>
                     </view>
-                    <navigationItem key="navigationItem" id="xMB-VK-1pe"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="xMB-VK-1pe"/>
                     <connections>
                         <outlet property="bestScore" destination="qun-z7-aob" id="qpG-3g-REu"/>
                         <outlet property="playlistCover" destination="9Ax-13-X46" id="Qbp-oA-uAC"/>
@@ -228,7 +229,7 @@ Try to guess the right artist.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hex-bh-xSW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="128.80000000000001" y="-430.43478260869568"/>
+            <point key="canvasLocation" x="964" y="1156"/>
         </scene>
         <!--Quiz View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -475,39 +476,17 @@ Try to guess the right artist.</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bh0-jb-wZl"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Music Quiz" largeTitleDisplayMode="always" id="gZK-ij-IXW"/>
+                    <navigationItem key="navigationItem" title="Music Quiz" largeTitleDisplayMode="always" id="gZK-ij-IXW">
+                        <barButtonItem key="backBarButtonItem" title="Choose playlists" id="tzh-U8-8yC"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="playlistsCollection" destination="koB-j4-mjd" id="KRE-cd-9RA"/>
+                        <segue destination="Olc-bB-5Kz" kind="show" identifier="pushToPlaylistDetail" id="LFJ-sK-mHU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7K3-ww-TUT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="129" y="1155"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="23s-57-OZb">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="seO-y2-tbx" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="wwM-I0-1gW">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.070588235294117646" green="0.070588235294117646" blue="0.070588235294117646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
-                        <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Olc-bB-5Kz" kind="relationship" relationship="rootViewController" id="1bz-Ph-nM2"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="60g-p7-FVI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-692" y="-430"/>
+            <point key="canvasLocation" x="129" y="1157"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HjJ-aX-aEF">

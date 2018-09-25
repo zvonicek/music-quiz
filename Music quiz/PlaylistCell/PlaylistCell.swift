@@ -17,7 +17,7 @@ class PlaylistCell: UICollectionViewCell {
         imageView.layer.cornerRadius = 8
     }
 
-    func configure(with image: UIImage) {
-        self.imageView.image = image
+    func configure(with url: URL) {
+        self.imageView.downloadedFrom(url: url)
     }
 }
