@@ -24,14 +24,14 @@ class QuizViewController: UIViewController, AudioControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            SpotifyAPI.sharedInstance.getPlaylist(userId: "spotify", playlistId: "37i9dQZF1DWWGFQLoP9qlv") { (tracks:[Track]) in
-                self.albumTracks = tracks
-                // load UI
-                self.loadRandomSong()
-            }
-        }
-        
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+//            SpotifyAPI.sharedInstance.getPlaylist(userId: "spotify", playlistId: "37i9dQZF1DWWGFQLoP9qlv") { (tracks:[Track]) in
+//                self.albumTracks = tracks
+//                // load UI
+//                self.loadRandomSong()
+//            }
+//        }
+
         AudioController.sharedInstance.delegate = self
     }
 

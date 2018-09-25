@@ -22,11 +22,11 @@ class Playlist: NSObject {
         super.init()
 
         name = json["name"] as! String
-        let images = json["images"] as! [[String: String]]
-        if let image = images.first, let url = image["url"] {
+        let images = json["images"] as! [[String: Any]]
+        if let image = images.first, let url = image["url"] as? String {
             coverUrl = URL(string: url)
         }
-        let array = json.value(forKey: Key.Items.rawValue) as! [NSDictionary]
+        let array = (json["tracks"] as! NSDictionary).value(forKey: Key.Items.rawValue) as! [NSDictionary]
         tracks = array.map {
             let trackObj = $0.value(forKey: "track") as! NSDictionary
             return Track(json: trackObj)
