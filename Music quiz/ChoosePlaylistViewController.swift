@@ -11,19 +11,23 @@ import UIKit
 class ChoosePlaylistViewController: UIViewController {
 
     @IBOutlet weak var playlistsCollection: UICollectionView!
+    @IBOutlet weak var laodingView: UIView!
+    @IBOutlet weak var loadingImageView: UIImageView!
 
-    let playlistIds = ["37i9dQZF1DWWGFQLoP9qlv", "37i9dQZF1DXcBWIGoYBM5M", "37i9dQZF1DX186v583rmzp", "37i9dQZF1DXaXB8fQg7xif", "37i9dQZF1DX2ENAPP1Tyed","37i9dQZF1DX6xOPeSOGone"]
+    let playlistIds = ["37i9dQZF1DX0BcQWzuB7ZO", "37i9dQZF1DWXRqgorJj26U", "37i9dQZF1DWSQScAbo5nGF", "37i9dQZF1DWTwnEm1IYyoj", "37i9dQZF1DWWGFQLoP9qlv","37i9dQZF1DX4o1oenSJRJd", "37i9dQZF1DXbTxeAdrVG2l"]
     
     var playlistsViewModels: [PlaylistViewModel] = []
     var playlists: [Playlist] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        startAnimating()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             SpotifyAPI.sharedInstance.getPlaylists(playlistIds: self.playlistIds) { playlists in
+                self.laodingView.isHidden = true
                 self.playlists = playlists
                 self.playlistsViewModels = playlists.map(PlaylistViewModel.init)
+                self.stopAnimating()
                 DispatchQueue.main.async {
                     self.playlistsCollection.reloadData()
                 }
@@ -48,6 +52,20 @@ class ChoosePlaylistViewController: UIViewController {
 
     }
 
+    func startAnimating() {
+        let animation = CABasicAnimation(keyPath: "transform.rotation")
+        animation.fromValue = CGFloat(0)
+        animation.toValue = CGFloat.pi * 2
+        animation.repeatCount = .infinity
+        animation.duration = 1
+        animation.isRemovedOnCompletion = false
+
+        loadingImageView.layer.add(animation, forKey: "rotationAnimation")
+    }
+
+    func stopAnimating() {
+        loadingImageView.layer.removeAnimation(forKey: "rotationAnimation")
+    }
 }
 
 extension ChoosePlaylistViewController: UICollectionViewDataSource {

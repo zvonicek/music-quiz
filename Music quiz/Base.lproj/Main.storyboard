@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dgc-mM-dvI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dgc-mM-dvI">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -131,23 +130,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zSI-fk-MeK">
-                                <rect key="frame" x="68" y="51.5" width="240" height="292"/>
+                                <rect key="frame" x="68" y="51.5" width="239" height="292"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Ax-13-X46">
-                                        <rect key="frame" x="20" y="0.0" width="200" height="200"/>
+                                        <rect key="frame" x="19.5" y="0.0" width="200" height="200"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="MO9-nb-WY2"/>
                                             <constraint firstAttribute="height" constant="200" id="bpl-cM-qh5"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XX3-58-XAE">
-                                        <rect key="frame" x="77" y="221" width="87" height="41"/>
+                                        <rect key="frame" x="76" y="221" width="87" height="41"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best score: X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qun-z7-aob">
-                                        <rect key="frame" x="69" y="272" width="103" height="20"/>
+                                        <rect key="frame" x="68" y="272" width="103" height="20"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                         <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -168,7 +167,7 @@
                                 <rect key="frame" x="0.0" y="395" width="375" height="208"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZQ-wA-C0v">
-                                        <rect key="frame" x="82" y="40" width="212" height="42.5"/>
+                                        <rect key="frame" x="81.5" y="40" width="212" height="42.5"/>
                                         <attributedString key="attributedText">
                                             <fragment>
                                                 <string key="content">You’ll hear 10 short previews.
@@ -402,6 +401,9 @@ Try to guess the right artist.</string>
                     <navigationItem key="navigationItem" id="I5K-Nf-bGd">
                         <barButtonItem key="rightBarButtonItem" title="Give up" id="SZN-G9-7tE">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="giveUpButton:" destination="BYZ-38-t0r" id="SuH-p1-AC7"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -493,6 +495,23 @@ Try to guess the right artist.</string>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fx6-1I-UKe">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="meT-TP-4JS">
+                                        <rect key="frame" x="163.5" y="251.5" width="48" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="DcQ-lF-o70"/>
+                                            <constraint firstAttribute="width" constant="48" id="FVp-eZ-dGj"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.070588235294117646" green="0.070588235294117646" blue="0.070588235294117646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="meT-TP-4JS" firstAttribute="centerX" secondItem="fx6-1I-UKe" secondAttribute="centerX" id="PuY-qe-Iy0"/>
+                                    <constraint firstItem="meT-TP-4JS" firstAttribute="centerY" secondItem="fx6-1I-UKe" secondAttribute="centerY" id="gvV-5v-R8Z"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.070588235294117646" green="0.070588235294117646" blue="0.070588235294117646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -501,7 +520,11 @@ Try to guess the right artist.</string>
                             <constraint firstAttribute="trailing" secondItem="koB-j4-mjd" secondAttribute="trailing" constant="15" id="BKk-7S-Lso"/>
                             <constraint firstItem="koB-j4-mjd" firstAttribute="top" secondItem="Xw6-4i-P1t" secondAttribute="bottom" constant="10" id="Ngr-aS-bEz"/>
                             <constraint firstItem="Xw6-4i-P1t" firstAttribute="leading" secondItem="w0A-5K-7fJ" secondAttribute="leading" constant="15" id="bi0-cn-vPD"/>
+                            <constraint firstItem="fx6-1I-UKe" firstAttribute="top" secondItem="Mpp-fE-hQ2" secondAttribute="bottom" id="dUA-gw-0ZW"/>
+                            <constraint firstItem="xaa-iV-0bM" firstAttribute="top" secondItem="fx6-1I-UKe" secondAttribute="bottom" id="ip4-x3-xDR"/>
                             <constraint firstItem="xaa-iV-0bM" firstAttribute="top" secondItem="koB-j4-mjd" secondAttribute="bottom" id="lXs-8i-SYq"/>
+                            <constraint firstItem="bh0-jb-wZl" firstAttribute="trailing" secondItem="fx6-1I-UKe" secondAttribute="trailing" id="mfp-GS-Gu7"/>
+                            <constraint firstItem="fx6-1I-UKe" firstAttribute="leading" secondItem="bh0-jb-wZl" secondAttribute="leading" id="zM0-NJ-9oI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bh0-jb-wZl"/>
                     </view>
@@ -509,13 +532,15 @@ Try to guess the right artist.</string>
                         <barButtonItem key="backBarButtonItem" title="Choose playlists" id="tzh-U8-8yC"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="laodingView" destination="fx6-1I-UKe" id="f6K-7D-flz"/>
+                        <outlet property="loadingImageView" destination="meT-TP-4JS" id="CG3-FY-OFu"/>
                         <outlet property="playlistsCollection" destination="koB-j4-mjd" id="KRE-cd-9RA"/>
                         <segue destination="Olc-bB-5Kz" kind="show" identifier="pushToPlaylistDetail" id="LFJ-sK-mHU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7K3-ww-TUT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="129" y="1157"/>
+            <point key="canvasLocation" x="128.80000000000001" y="1156.3718140929536"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HjJ-aX-aEF">
@@ -540,4 +565,7 @@ Try to guess the right artist.</string>
             <point key="canvasLocation" x="-732" y="-343"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Image" width="24" height="24"/>
+    </resources>
 </document>
