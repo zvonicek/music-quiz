@@ -82,8 +82,12 @@ extension ChoosePlaylistViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let playlistCell = collectionView.dequeueReusableCell(withReuseIdentifier: "playlistCellID", for: indexPath) as! PlaylistCell
-        
-        playlistCell.configure(with: playlistsViewModels[indexPath.row].image)
+
+        if playlistsViewModels[indexPath.row].title == "Deep Thinking" {
+            playlistCell.imageView.image = UIImage(named: "cover.jpg")
+        } else {
+            playlistCell.configure(with: playlistsViewModels[indexPath.row].image)
+        }
         return playlistCell
     }
 }
