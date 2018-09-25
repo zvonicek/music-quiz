@@ -19,6 +19,7 @@
 		D01574C5215A32C2005FD6EA /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01574C1215A32C1005FD6EA /* Model.swift */; };
 		D01574C6215A32C2005FD6EA /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01574C2215A32C1005FD6EA /* AudioController.swift */; };
 		D01574C8215A32C2005FD6EA /* Spotify.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01574C4215A32C2005FD6EA /* Spotify.swift */; };
+		D0426FC1215A49BD006445F8 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0426FC0215A49BD006445F8 /* Array+Extensions.swift */; };
 		E17936888C5FD436806CC76D /* Pods_Music_quiz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E81918F90733AB38D46C59A6 /* Pods_Music_quiz.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		D01574C1215A32C1005FD6EA /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		D01574C2215A32C1005FD6EA /* AudioController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioController.swift; sourceTree = "<group>"; };
 		D01574C4215A32C2005FD6EA /* Spotify.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spotify.swift; sourceTree = "<group>"; };
+		D0426FC0215A49BD006445F8 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		E81918F90733AB38D46C59A6 /* Pods_Music_quiz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Music_quiz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -96,6 +98,7 @@
 				B94BE0C1215A25FA0088CDAB /* Assets.xcassets */,
 				B94BE0C3215A25FA0088CDAB /* LaunchScreen.storyboard */,
 				B94BE0C6215A25FB0088CDAB /* Info.plist */,
+				D0426FC0215A49BD006445F8 /* Array+Extensions.swift */,
 			);
 			path = "Music quiz";
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D01574C8215A32C2005FD6EA /* Spotify.swift in Sources */,
+				D0426FC1215A49BD006445F8 /* Array+Extensions.swift in Sources */,
 				B94BE0D1215A38160088CDAB /* ChoosePlaylistViewController.swift in Sources */,
 				D01574C5215A32C2005FD6EA /* Model.swift in Sources */,
 				B94BE0D3215A38600088CDAB /* UIModels.swift in Sources */,
