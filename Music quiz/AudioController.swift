@@ -11,11 +11,15 @@ import AVFoundation
 import MediaPlayer
 import UIKit
 
+protocol AudioControllerDelegate {
+    func modifySlider(seconds: Float)
+}
+
 class AudioController {
-    var player :AVPlayer!
+    var player: AVPlayer!
     static let sharedInstance = AudioController()
-    var currentURL :String!
-    var delegate :MusicViewController!
+    var currentURL: String!
+    var delegate: AudioControllerDelegate!
     
     func playPreview(URLString:String) {        
         let url = NSURL(string: URLString)
