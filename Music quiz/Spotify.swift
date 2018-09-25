@@ -48,6 +48,8 @@ enum NotificationKey:String {
 
 class SpotifyAPI: NSObject {
     static let sharedInstance = SpotifyAPI()
+
+    private var token: String?
     
     //MARK: Basics
     private func createRequest(url: NSURL, method: String) -> NSMutableURLRequest {
@@ -55,7 +57,9 @@ class SpotifyAPI: NSObject {
         request.httpMethod = method
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("Bearer BQCYhMWMLYywWkNjFbh7no8OgWixW0xS2qeqpG6e8pu5JKpDCRwFo-R7MCgQFq4rUYpfFTmUZUQmXm9kPsA", forHTTPHeaderField: "Authorization")
+        if let token = token {
+            request.addValue(token, forHTTPHeaderField: "Authorization")
+        }
         
         return request
     }
@@ -79,6 +83,24 @@ class SpotifyAPI: NSObject {
         }
         task.resume()
     }
+
+    func authorize() {
+        guard let url = URL(string: "https://accounts.spotify.com/api/token") else {return}
+        let request = NSMutableURLRequest(url: url)
+        request.httpMethod = "POST"
+
+        request.addValue("Basic MzgyM2I1YjkwNjY3NDJhY2I0YmRjMzA3MzgyNTAwMzE6MjRiNzlkNjM5NWM5NGI2YThiYzMwNzJhYjFiNzYzNWI=", forHTTPHeaderField: "Authorization")
+        request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+
+        let bodyString = "grant_type=client_credentials"
+        request.httpBody = bodyString.data(using: .utf8, allowLossyConversion: true)
+
+        createTask(request: request) { json in
+            self.token = (json["token_type"] as! String) + " " + (json["access_token"] as! String)
+        }
+    }
+
+
     
     func postNotification(key: String, results:AnyObject) {
         let nc = NotificationCenter.default
