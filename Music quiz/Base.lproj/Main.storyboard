@@ -144,30 +144,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Ax-13-X46">
-                                <rect key="frame" x="87.5" y="40" width="200" height="200"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zSI-fk-MeK">
+                                <rect key="frame" x="68" y="51.5" width="240" height="292"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Ax-13-X46">
+                                        <rect key="frame" x="20" y="0.0" width="200" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="MO9-nb-WY2"/>
+                                            <constraint firstAttribute="height" constant="200" id="bpl-cM-qh5"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XX3-58-XAE">
+                                        <rect key="frame" x="77" y="221" width="87" height="41"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best score: X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qun-z7-aob">
+                                        <rect key="frame" x="69" y="272" width="103" height="20"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="MO9-nb-WY2"/>
-                                    <constraint firstAttribute="height" constant="200" id="bpl-cM-qh5"/>
+                                    <constraint firstAttribute="bottom" secondItem="qun-z7-aob" secondAttribute="bottom" id="FE5-Va-eLI"/>
+                                    <constraint firstItem="9Ax-13-X46" firstAttribute="top" secondItem="zSI-fk-MeK" secondAttribute="top" id="Fhi-4q-t8M"/>
+                                    <constraint firstItem="XX3-58-XAE" firstAttribute="centerX" secondItem="zSI-fk-MeK" secondAttribute="centerX" id="Gb7-UF-GIA"/>
+                                    <constraint firstItem="qun-z7-aob" firstAttribute="top" secondItem="XX3-58-XAE" secondAttribute="bottom" constant="10" id="JBK-Sf-VTG"/>
+                                    <constraint firstItem="XX3-58-XAE" firstAttribute="top" secondItem="9Ax-13-X46" secondAttribute="bottom" constant="21" id="ZfL-Th-r4N"/>
+                                    <constraint firstItem="9Ax-13-X46" firstAttribute="centerX" secondItem="zSI-fk-MeK" secondAttribute="centerX" id="ejJ-1E-kMf"/>
+                                    <constraint firstItem="qun-z7-aob" firstAttribute="centerX" secondItem="zSI-fk-MeK" secondAttribute="centerX" id="wPs-qH-ziT"/>
                                 </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XX3-58-XAE">
-                                <rect key="frame" x="144" y="261" width="87" height="41"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best score: X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qun-z7-aob">
-                                <rect key="frame" x="136" y="312" width="103" height="20"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ce9-DM-gdv">
                                 <rect key="frame" x="0.0" y="395" width="375" height="208"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZQ-wA-C0v">
-                                        <rect key="frame" x="81.5" y="40" width="212" height="42.5"/>
+                                        <rect key="frame" x="82" y="40" width="212" height="42.5"/>
                                         <attributedString key="attributedText">
                                             <fragment>
                                                 <string key="content">You’ll hear 10 short previews.
@@ -205,17 +220,30 @@ Try to guess the right artist.</string>
                                     <constraint firstItem="TZQ-wA-C0v" firstAttribute="centerX" secondItem="ce9-DM-gdv" secondAttribute="centerX" id="aZc-as-T4m"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="221-rB-vCJ">
+                                <rect key="frame" x="55" y="343.5" width="240" height="51.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aGg-RH-jgd">
+                                <rect key="frame" x="42" y="0.0" width="240" height="51.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.070588235294117646" green="0.070588235294117646" blue="0.070588235294117646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="XX3-58-XAE" firstAttribute="centerX" secondItem="Hvl-W0-hrx" secondAttribute="centerX" id="8SO-9Y-kFQ"/>
-                            <constraint firstItem="9Ax-13-X46" firstAttribute="top" secondItem="xra-CI-aKJ" secondAttribute="bottom" constant="40" id="F1t-vh-8xq"/>
+                            <constraint firstItem="aGg-RH-jgd" firstAttribute="top" secondItem="xra-CI-aKJ" secondAttribute="bottom" id="2Sr-4l-jZk"/>
+                            <constraint firstItem="g9z-zI-wJJ" firstAttribute="trailing" secondItem="221-rB-vCJ" secondAttribute="trailing" constant="80" id="460-AA-eh5"/>
+                            <constraint firstItem="zSI-fk-MeK" firstAttribute="leading" secondItem="g9z-zI-wJJ" secondAttribute="leading" constant="68" id="4WW-n6-0hf"/>
+                            <constraint firstItem="zSI-fk-MeK" firstAttribute="top" secondItem="aGg-RH-jgd" secondAttribute="bottom" id="G0B-k5-6hg"/>
+                            <constraint firstItem="aGg-RH-jgd" firstAttribute="leading" secondItem="g9z-zI-wJJ" secondAttribute="leading" constant="42" id="MXf-7V-g6O"/>
+                            <constraint firstItem="221-rB-vCJ" firstAttribute="leading" secondItem="g9z-zI-wJJ" secondAttribute="leading" constant="55" id="OlR-E7-tiM"/>
+                            <constraint firstItem="ce9-DM-gdv" firstAttribute="top" secondItem="221-rB-vCJ" secondAttribute="bottom" id="Twb-se-R9r"/>
                             <constraint firstItem="ce9-DM-gdv" firstAttribute="bottom" secondItem="8SE-ZU-G8g" secondAttribute="top" id="Whe-tg-maz"/>
+                            <constraint firstItem="g9z-zI-wJJ" firstAttribute="trailing" secondItem="aGg-RH-jgd" secondAttribute="trailing" constant="93" id="aKc-xa-5vh"/>
                             <constraint firstItem="ce9-DM-gdv" firstAttribute="centerX" secondItem="Hvl-W0-hrx" secondAttribute="centerX" id="dqS-15-Loq"/>
-                            <constraint firstItem="XX3-58-XAE" firstAttribute="top" secondItem="9Ax-13-X46" secondAttribute="bottom" constant="21" id="gdh-cz-99F"/>
-                            <constraint firstItem="9Ax-13-X46" firstAttribute="centerX" secondItem="Hvl-W0-hrx" secondAttribute="centerX" id="jFw-8d-drJ"/>
-                            <constraint firstItem="qun-z7-aob" firstAttribute="top" secondItem="XX3-58-XAE" secondAttribute="bottom" constant="10" id="jP4-B1-5gj"/>
-                            <constraint firstItem="qun-z7-aob" firstAttribute="centerX" secondItem="Hvl-W0-hrx" secondAttribute="centerX" id="rCJ-0t-V8n"/>
+                            <constraint firstItem="221-rB-vCJ" firstAttribute="top" secondItem="zSI-fk-MeK" secondAttribute="bottom" id="sHx-IP-ve1"/>
+                            <constraint firstItem="221-rB-vCJ" firstAttribute="height" secondItem="aGg-RH-jgd" secondAttribute="height" id="wrR-k7-spR"/>
+                            <constraint firstItem="zSI-fk-MeK" firstAttribute="centerX" secondItem="ce9-DM-gdv" secondAttribute="centerX" id="zY7-7u-Hbv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="g9z-zI-wJJ"/>
                     </view>
@@ -229,7 +257,7 @@ Try to guess the right artist.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hex-bh-xSW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="964" y="1156"/>
+            <point key="canvasLocation" x="964" y="1155.472263868066"/>
         </scene>
         <!--Quiz View Controller-->
         <scene sceneID="tne-QT-ifu">

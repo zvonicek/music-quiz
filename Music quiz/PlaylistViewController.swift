@@ -14,11 +14,18 @@ class PlaylistViewController: UIViewController {
     @IBOutlet weak var playlistName: UILabel!
     @IBOutlet weak var bestScore: UILabel!
     @IBOutlet weak var startGameButton: UIButton!
-    
+
+    var playlist: Playlist!
+    var playlistViewModel: PlaylistViewModel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.playlistCover.layer.cornerRadius = 8
         self.startGameButton.layer.cornerRadius = 30
+
+        playlistCover.downloadedFrom(url: playlistViewModel.image)
+        playlistName.text = playlistViewModel.title
+        bestScore.text = playlistViewModel.bestScore
     }
 
 

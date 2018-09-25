@@ -44,6 +44,9 @@ class ChoosePlaylistViewController: UIViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let sender = sender as! (Playlist, PlaylistViewModel)
+        (segue.destination as! PlaylistViewController).playlist = sender.0
+        (segue.destination as! PlaylistViewController).playlistViewModel = sender.1
 
     }
 
@@ -68,7 +71,7 @@ extension ChoosePlaylistViewController: UICollectionViewDataSource {
 
 extension ChoosePlaylistViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "pushToPlaylistDetail", sender: playlists[indexPath.row])
+        performSegue(withIdentifier: "pushToPlaylistDetail", sender: (playlists[indexPath.row], playlistsViewModels[indexPath.row]))
     }
 }
 

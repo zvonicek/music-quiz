@@ -15,6 +15,6 @@ struct PlaylistViewModel {
     init(playlist: Playlist) {
         self.image = playlist.coverUrl!
         self.title = playlist.name
-        self.bestScore = "90"
+        self.bestScore = "Best score: 90"
     }
 }
